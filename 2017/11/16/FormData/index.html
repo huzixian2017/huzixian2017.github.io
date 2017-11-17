@@ -8,11 +8,11 @@
   <meta name="description" content="1. 概述FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。 2. 构造函数创建一个formData对象实例有几种方式1、创建一个空对象实例 FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。1var for">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FormData">
-<meta property="og:url" content="http://yoursite.com/2017/11/17/FormData/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/11/16/FormData/index.html">
 <meta property="og:site_name" content="胡自鲜">
 <meta property="og:description" content="1. 概述FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。 2. 构造函数创建一个formData对象实例有几种方式1、创建一个空对象实例 FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。1var for">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-17T13:22:55.000Z">
+<meta property="og:updated_time" content="2017-11-17T13:43:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FormData">
 <meta name="twitter:description" content="1. 概述FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。 2. 构造函数创建一个formData对象实例有几种方式1、创建一个空对象实例 FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。1var for">
@@ -70,8 +70,8 @@
       <div class="outer">
         <section id="main"><article id="post-FormData" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/17/FormData/" class="article-date">
-  <time datetime="2017-11-17T12:57:03.000Z" itemprop="datePublished">2017-11-17</time>
+    <a href="/2017/11/16/FormData/" class="article-date">
+  <time datetime="2017-11-16T13:16:06.000Z" itemprop="datePublished">2017-11-16</time>
 </a>
     
   </div>
@@ -94,23 +94,23 @@
 <h3 id="2-构造函数"><a href="#2-构造函数" class="headerlink" title="2. 构造函数"></a>2. 构造函数</h3><h4 id="创建一个formData对象实例有几种方式"><a href="#创建一个formData对象实例有几种方式" class="headerlink" title="创建一个formData对象实例有几种方式"></a>创建一个formData对象实例有几种方式</h4><h5 id="1、创建一个空对象实例-FormData类型其实是在XMLHttpRequest-2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。"><a href="#1、创建一个空对象实例-FormData类型其实是在XMLHttpRequest-2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。" class="headerlink" title="1、创建一个空对象实例 FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。"></a>1、创建一个空对象实例 FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span><br></pre></td></tr></table></figure>
 <p>此时可以调用append()方法来添加数据</p>
 <h5 id="2-使用已有的表单来初始化一个对象实例"><a href="#2-使用已有的表单来初始化一个对象实例" class="headerlink" title="2.使用已有的表单来初始化一个对象实例"></a>2.使用已有的表单来初始化一个对象实例</h5><h6 id="假如现在页面已经有一个表单"><a href="#假如现在页面已经有一个表单" class="headerlink" title="假如现在页面已经有一个表单"></a>假如现在页面已经有一个表单</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form id=<span class="string">"myForm"</span> action=<span class="string">""</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;名字</span><br><span class="line">    &lt;input type=<span class="string">"password"</span> name=<span class="string">"psw"</span>&gt;密码</span><br><span class="line">    &lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/form&gt;</span></span><br></pre></td></tr></table></figure>
-<h6 id="我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象"><a href="#我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象" class="headerlink" title="我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象"></a>我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取页面已有的一个form表单</span></span><br><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">"myForm"</span>);</span><br><span class="line"><span class="comment">// 用表单来初始化</span></span><br><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData(form);</span><br><span class="line"><span class="comment">// 我们可以根据name来访问表单中的字段</span></span><br><span class="line"><span class="keyword">var</span> name = formData.get(<span class="string">"name"</span>); <span class="comment">// 获取名字</span></span><br><span class="line"><span class="keyword">var</span> psw = formData.get(<span class="string">"psw"</span>); <span class="comment">// 获取密码</span></span><br><span class="line"><span class="comment">// 当然也可以在此基础上，添加其他数据</span></span><br><span class="line">formData.append(<span class="string">"token"</span>,<span class="string">"kshdfiwi3rh"</span>);</span><br></pre></td></tr></table></figure>
+<h6 id="我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象"><a href="#我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象" class="headerlink" title="我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象"></a>我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取页面已有的一个form表单</span></span><br><span class="line">	<span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">"myForm"</span>);</span><br><span class="line"><span class="comment">// 用表单来初始化</span></span><br><span class="line">	<span class="keyword">var</span> formData = <span class="keyword">new</span> FormData(form);</span><br><span class="line"><span class="comment">// 我们可以根据name来访问表单中的字段</span></span><br><span class="line">	<span class="keyword">var</span> name = formData.get(<span class="string">"name"</span>); <span class="comment">// 获取名字</span></span><br><span class="line">	<span class="keyword">var</span> psw = formData.get(<span class="string">"psw"</span>); <span class="comment">// 获取密码</span></span><br><span class="line"><span class="comment">// 当然也可以在此基础上，添加其他数据</span></span><br><span class="line">	formData.append(<span class="string">"token"</span>,<span class="string">"kshdfiwi3rh"</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="3-操作方法"><a href="#3-操作方法" class="headerlink" title="3. 操作方法"></a>3. 操作方法</h3><p>首先，我们要明确formData里面存储的数据形式，一对key/value组成一条数据，key是唯一的，一个key可能对应多个value。如果是使用表单初始化，每一个表单字段对应一条数据，它们的HTML name属性即为key值，它们value属性对应value值。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">key</th>
-<th style="text-align:center">value</th>
+<th>key</th>
+<th>value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">k1</td>
-<td style="text-align:center">[v1,v2,v3]</td>
+<td>k1</td>
+<td>[v1,v2,v3]</td>
 </tr>
 <tr>
-<td style="text-align:center">k2</td>
-<td style="text-align:center">v4</td>
+<td>k2</td>
+<td>v4</td>
 </tr>
 </tbody>
 </table>
@@ -121,20 +121,22 @@
 <h5 id="3-3-设置修改数据"><a href="#3-3-设置修改数据" class="headerlink" title="3.3 设置修改数据"></a>3.3 设置修改数据</h5><p>我们可以通过set(key, value)来设置修改数据，如果指定的key不存在则会新增一条，如果存在，则会修改对应的value值。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.set(<span class="string">"k1"</span>, <span class="string">"1"</span>);</span><br><span class="line">formData.getAll(<span class="string">"k1"</span>); <span class="comment">// ["1"]</span></span><br></pre></td></tr></table></figure>
 <h5 id="3-4-判断是否该数据"><a href="#3-4-判断是否该数据" class="headerlink" title="3.4 判断是否该数据"></a>3.4 判断是否该数据</h5><p>我们可以通过has(key)来判断是否对应的key值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">	formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">	formData.append(<span class="string">"k2"</span>,<span class="literal">null</span>);</span><br><span class="line">	</span><br><span class="line">	formData.has(<span class="string">"k1"</span>); <span class="comment">// true</span></span><br><span class="line">	formData.has(<span class="string">"k2"</span>); <span class="comment">// true</span></span><br><span class="line">	formData.has(<span class="string">"k3"</span>); <span class="comment">// false</span></span><br><span class="line">~~~ </span><br><span class="line"></span><br><span class="line">##### 3.5 删除数据</span><br><span class="line"></span><br><span class="line">通过<span class="keyword">delete</span>(key)，来删除数据</span><br><span class="line"></span><br><span class="line">~~~ javascrippt</span><br><span class="line">	formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">	formData.append(<span class="string">"k1"</span>, <span class="string">"v2"</span>);</span><br><span class="line">	formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">	formData.delete(<span class="string">"k1"</span>);</span><br><span class="line">	formData.getAll(<span class="string">"k1"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.append(<span class="string">"k2"</span>,<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">formData.has(<span class="string">"k1"</span>); <span class="comment">// true</span></span><br><span class="line">formData.has(<span class="string">"k2"</span>); <span class="comment">// true</span></span><br><span class="line">formData.has(<span class="string">"k3"</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h5 id="3-5-删除数据"><a href="#3-5-删除数据" class="headerlink" title="3.5 删除数据"></a>3.5 删除数据</h5><p>通过delete(key)，来删除数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v2"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.delete(<span class="string">"k1"</span>);</span><br><span class="line">formData.getAll(<span class="string">"k1"</span>); <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
 <h5 id="3-6-遍历"><a href="#3-6-遍历" class="headerlink" title="3.6 遍历"></a>3.6 遍历</h5><p>我们可以通过entries()来获取一个迭代器，然后遍历所有的数据，</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v2"</span>);</span><br><span class="line">formData.append(<span class="string">"k2"</span>, <span class="string">"v1"</span>);</span><br><span class="line"><span class="keyword">var</span> i = formData.entries();</span><br><span class="line">i.next(); <span class="comment">// &#123;done:false, value:["k1", "v1"]&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:fase, value:["k1", "v2"]&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:fase, value:["k2", "v1"]&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:true, value:undefined&#125;</span></span><br></pre></td></tr></table></figure>
 <p>可以看到返回迭代器的规则</p>
 <p>每调用一次next()返回一条数据，数据的顺序由添加的顺序决定<br>返回的是一个对象，当其done属性为true时，说明已经遍历完所有的数据，这个也可以作为判断的依据<br>返回的对象的value属性以数组形式存储了一对key/value，数组下标0为key，下标1为value，如果一个key值对应多个value，会变成多对key/value返回<br>我们也可以通过values()方法只获取value值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">formData.append(&quot;k1&quot;, &quot;v1&quot;);</span><br><span class="line">formData.append(&quot;k1&quot;, &quot;v2&quot;);</span><br><span class="line">formData.append(&quot;k2&quot;, &quot;v1&quot;);</span><br><span class="line"></span><br><span class="line">var i = formData.entries();</span><br><span class="line"></span><br><span class="line">i.next(); // &#123;done:false, value:&quot;v1&quot;&#125;</span><br><span class="line">i.next(); // &#123;done:fase, value:&quot;v2&quot;&#125;</span><br><span class="line">i.next(); // &#123;done:fase, value:&quot;v1&quot;&#125;</span><br><span class="line">i.next(); // &#123;done:true, value:undefined&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v2"</span>);</span><br><span class="line">formData.append(<span class="string">"k2"</span>, <span class="string">"v1"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = formData.entries();</span><br><span class="line"></span><br><span class="line">i.next(); <span class="comment">// &#123;done:false, value:"v1"&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:fase, value:"v2"&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:fase, value:"v1"&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:true, value:undefined&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="4-发送数据"><a href="#4-发送数据" class="headerlink" title="4. 发送数据"></a>4. 发送数据</h3><p>我们可以通过xhr来发送数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var xhr = new XMLHttpRequest();</span><br><span class="line">xhr.open(&quot;post&quot;,&quot;login&quot;);</span><br><span class="line">xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;);</span><br><span class="line">xhr.send(formData);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">"post"</span>,<span class="string">"login"</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">xhr.send(formData);</span><br></pre></td></tr></table></figure>
 <p>这种方式可以来实现文件的异步上传。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/FormData/" data-id="cja3x3g8y00012n5nkakopspq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/FormData/" data-id="cja3xw8ib0000zz5ng1m4hpzf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,10 +145,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2017/11/16/jQuery-Ajax请求数据/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          javascript 和 jQuery 的Ajax 用法
+        
+      </div>
+    </a>
   
-    <a href="/2017/11/16/jQuery-Ajax请求数据/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2017/11/16/jQery-Ajax文件上传/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">javascript 和 jQuery 的Ajax 用法</div>
+      <div class="article-nav-title">jQery Ajax文件上传</div>
     </a>
   
 </nav>
@@ -197,11 +208,11 @@
       <ul>
         
           <li>
-            <a href="/2017/11/17/FormData/">FormData</a>
+            <a href="/2017/11/16/jQuery-Ajax请求数据/">javascript 和 jQuery 的Ajax 用法</a>
           </li>
         
           <li>
-            <a href="/2017/11/16/jQuery-Ajax请求数据/">javascript 和 jQuery 的Ajax 用法</a>
+            <a href="/2017/11/16/FormData/">FormData</a>
           </li>
         
           <li>
