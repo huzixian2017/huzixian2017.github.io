@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQery Ajax文件上传 | 胡自鲜</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="模拟前台html页面1.jQuery插件AjaxFileUpload用来实现ajax文件上传1234567891011121314151617181920212223242526272829303132&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;		&amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;		&amp;lt;title&amp;gt;&amp;lt;/tit">
+<meta name="keywords" content="jQuery Ajax上传文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQery Ajax文件上传">
+<meta property="og:url" content="http://yoursite.com/2017/11/16/jQery-Ajax文件上传/index.html">
+<meta property="og:site_name" content="胡自鲜">
+<meta property="og:description" content="模拟前台html页面1.jQuery插件AjaxFileUpload用来实现ajax文件上传1234567891011121314151617181920212223242526272829303132&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;		&amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;		&amp;lt;title&amp;gt;&amp;lt;/tit">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-17T03:33:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQery Ajax文件上传">
+<meta name="twitter:description" content="模拟前台html页面1.jQuery插件AjaxFileUpload用来实现ajax文件上传1234567891011121314151617181920212223242526272829303132&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;		&amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;		&amp;lt;title&amp;gt;&amp;lt;/tit">
+  
+    <link rel="alternate" href="/atom.xml" title="胡自鲜" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">胡自鲜</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">若你喜欢怪人 其实我很美</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQery-Ajax文件上传" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/16/jQery-Ajax文件上传/" class="article-date">
+  <time datetime="2017-11-16T13:16:06.000Z" itemprop="datePublished">2017-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQery Ajax文件上传
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="模拟前台html页面"><a href="#模拟前台html页面" class="headerlink" title="模拟前台html页面"></a>模拟前台html页面</h2><h3 id="1-jQuery插件AjaxFileUpload用来实现ajax文件上传"><a href="#1-jQuery插件AjaxFileUpload用来实现ajax文件上传" class="headerlink" title="1.jQuery插件AjaxFileUpload用来实现ajax文件上传"></a>1.jQuery插件AjaxFileUpload用来实现ajax文件上传</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;script src=<span class="string">"http://libs.baidu.com/jquery/2.0.0/jquery.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script src=<span class="string">"ajaxfileupload.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">	&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">	&lt;body&gt;</span></span><br><span class="line"><span class="regexp">		&lt;form enctype="multipart/</span>form-data<span class="string">" method="</span>post<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	        &lt;input id="</span>img<span class="string">" type="</span>file<span class="string">" name="</span>img<span class="string">" class="</span>input<span class="string">"&gt;</span></span><br><span class="line"><span class="string">  			&lt;button class="</span>button<span class="string">" id="</span>buttonUpload<span class="string">" onclick="</span><span class="keyword">return</span> ajaxFileUpload();<span class="string">"&gt;Upload&lt;/button&gt;</span></span><br><span class="line"><span class="string">		&lt;/form&gt;	</span></span><br><span class="line"><span class="string">		&lt;div id="</span>showtext<span class="string">"&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">		&lt;img src="</span><span class="string">" alt="</span><span class="string">" id="</span>showImg<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">		&lt;script type="</span>text/javascript<span class="string">"&gt; </span></span><br><span class="line"><span class="string">			function ajaxFileUpload()&#123; </span></span><br><span class="line"><span class="string">				$.ajaxFileUpload(&#123; </span></span><br><span class="line"><span class="string">					url:"</span>upfile.php<span class="string">", </span></span><br><span class="line"><span class="string">					secureuri:false, </span></span><br><span class="line"><span class="string">					fileElementId:'img', </span></span><br><span class="line"><span class="string">					dataType: 'text', </span></span><br><span class="line"><span class="string">					processData:false,</span></span><br><span class="line"><span class="string">					success: function (data) &#123; </span></span><br><span class="line"><span class="string">						document.getElementById('showImg').src=data;</span></span><br><span class="line"><span class="string">					&#125; </span></span><br><span class="line"><span class="string">				&#125;) </span></span><br><span class="line"><span class="string">				return false;</span></span><br><span class="line"><span class="string">			&#125; </span></span><br><span class="line"><span class="string">		&lt;/script&gt; </span></span><br><span class="line"><span class="string">	&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-通过jQuery-Ajax使用FormData对象上传文件"><a href="#2-通过jQuery-Ajax使用FormData对象上传文件" class="headerlink" title="2.通过jQuery Ajax使用FormData对象上传文件"></a>2.通过jQuery Ajax使用FormData对象上传文件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">	&lt;body&gt;</span></span><br><span class="line"><span class="regexp">		&lt;form enctype="multipart/</span>form-data<span class="string">" method="</span>post<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	        &lt;input id="</span>img<span class="string">" type="</span>file<span class="string">" name="</span>img<span class="string">"&gt;</span></span><br><span class="line"><span class="string">  			&lt;input type="</span>button<span class="string">" id="</span>button<span class="string">" value="</span>提交<span class="string">"&gt;</span></span><br><span class="line"><span class="string">		&lt;/form&gt;	</span></span><br><span class="line"><span class="string">		&lt;img src="</span><span class="string">" id="</span>tp<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">	&lt;/body&gt;</span></span><br><span class="line"><span class="string">	&lt;script src="</span>http:<span class="comment">//libs.baidu.com/jquery/2.0.0/jquery.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line">	&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">		$(<span class="string">'#button'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line">			formData.append(<span class="string">"img"</span>,<span class="built_in">document</span>.getElementById(<span class="string">'img'</span>).files[<span class="number">0</span>]);</span><br><span class="line">			<span class="built_in">console</span>.log(formData);</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">				type:<span class="string">"post"</span>,</span><br><span class="line">				url:<span class="string">"upfile.php"</span>,</span><br><span class="line">				<span class="comment">//异步</span></span><br><span class="line">				<span class="keyword">async</span>:<span class="literal">true</span>,</span><br><span class="line">				data:formData,</span><br><span class="line">				<span class="comment">//processData 默认为false，当设置为true的时候,jquery ajax </span></span><br><span class="line">				<span class="comment">//Jquery是否对你的数据进行预处理</span></span><br><span class="line">				processData:<span class="literal">false</span>,</span><br><span class="line">				<span class="comment">//Jquery不要修改请求内容类型</span></span><br><span class="line">				contentType:<span class="literal">false</span>,</span><br><span class="line">				success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">					<span class="built_in">document</span>.getElementById(<span class="string">'tp'</span>).src = data;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;)	</span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="后台PHP"><a href="#后台PHP" class="headerlink" title="后台PHP"></a>后台PHP</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="keyword">if</span>(!<span class="keyword">empty</span>($_FILES))&#123;</span><br><span class="line">		move_uploaded_file($_FILES[<span class="string">'img'</span>][<span class="string">'tmp_name'</span>],$_FILES[<span class="string">'img'</span>][<span class="string">'name'</span>]);</span><br><span class="line">		<span class="keyword">echo</span> $_FILES[<span class="string">'img'</span>][<span class="string">'name'</span>];</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"error"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="jQery-Ajax参数"><a href="#jQery-Ajax参数" class="headerlink" title="jQery Ajax参数"></a>jQery Ajax参数</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">url</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">(默认: 当前页地址) 发送请求的地址</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">(默认: “GET”) 请求方式 (“POST” 或 “GET”)，</td>
+<td>默认为 “GET”。</td>
+</tr>
+<tr>
+<td style="text-align:left">async</td>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:left">(默认: true) 默认设置下，所有请求均为异步请求。如果需要发送同步请求，请将此选项设置为 false。注意，同步请求将锁住浏览器，用户其它操作必须等待请求完成才可以执行。</td>
+</tr>
+<tr>
+<td style="text-align:left">contentType</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">告诉服务器从浏览器提交过来的数据格式。</td>
+</tr>
+<tr>
+<td style="text-align:left">dataType</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">告诉服务器浏览器可以想要返回的数据格式类型，同时JQuery也会根据该类型对返回的数据进行处理,类型:<br>“xml” :  返回 XML 文档，可用 jQuery 处理。<br>“html” : 返回纯文本 HTML 信息；包含 script 元素<br>“script” : 返回纯文本 JavaScript 代码。不会自动缓存结果<br>“json”: 返回 JSON 数据 。JQuery将返回的字符串格式数据自动转化为Javascript对象，便于直接使用obj.property格式访问</td>
+</tr>
+<tr>
+<td style="text-align:left">processData</td>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:left">(默认: true) 默认情况下，发送的数据将被转换为对象(技术上讲并非字符串) 以配合默认内容类型 “application/x-www-form-urlencoded”。如果要发送 DOM 树信息或其它不希望转换的信息，请设置为 false。</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/16/jQery-Ajax文件上传/" data-id="cja3cic6x0000qc5nkds9wwqd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery-Ajax上传文件/">jQuery Ajax上传文件</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/16/jQuery-Ajax请求数据/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          jQuery Ajax请求数据
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/13/testAgain/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">testAgain</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery-Ajax上传文件/">jQuery Ajax上传文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/获取数据-post-get-load/">获取数据 post get load</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/jQuery-Ajax上传文件/" style="font-size: 10px;">jQuery Ajax上传文件</a> <a href="/tags/获取数据-post-get-load/" style="font-size: 10px;">获取数据 post get load</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/16/jQuery-Ajax请求数据/">jQuery Ajax请求数据</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/16/jQery-Ajax文件上传/">jQery Ajax文件上传</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/13/testAgain/">testAgain</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/13/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/13/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 胡自鲜<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
