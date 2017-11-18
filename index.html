@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,102 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/18/JSONP/" class="article-date">
+  <time datetime="2017-11-18T08:59:46.000Z" itemprop="datePublished">2017-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/18/JSONP/">JSONP的 JS 和 JQ 用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JSONP-的JS用法"><a href="#JSONP-的JS用法" class="headerlink" title="JSONP 的JS用法"></a>JSONP 的JS用法</h3><h3 id="JSONP由两部分组成：回调函数和数据。回调函数是当响应到来时应该在页面中调用的函数。回调函数的名字一般是在请求中指定的。而数据就是传入回调函数中的-JSON-数据。"><a href="#JSONP由两部分组成：回调函数和数据。回调函数是当响应到来时应该在页面中调用的函数。回调函数的名字一般是在请求中指定的。而数据就是传入回调函数中的-JSON-数据。" class="headerlink" title="JSONP由两部分组成：回调函数和数据。回调函数是当响应到来时应该在页面中调用的函数。回调函数的名字一般是在请求中指定的。而数据就是传入回调函数中的 JSON 数据。"></a>JSONP由两部分组成：回调函数和数据。回调函数是当响应到来时应该在页面中调用的函数。回调函数的名字一般是在请求中指定的。而数据就是传入回调函数中的 JSON 数据。</h3><h4 id="注：jsonp的方式只是针对get请求方式，不支持post请求。这也是Jsonp方式的局限性"><a href="#注：jsonp的方式只是针对get请求方式，不支持post请求。这也是Jsonp方式的局限性" class="headerlink" title="注：jsonp的方式只是针对get请求方式，不支持post请求。这也是Jsonp方式的局限性"></a>注：jsonp的方式只是针对get请求方式，不支持post请求。这也是Jsonp方式的局限性</h4><h2 id="javaScript用法"><a href="#javaScript用法" class="headerlink" title="javaScript用法"></a>javaScript用法</h2><h5 id="可以通过动态创建script标签或是写入固定的script标签，然后利用script的src-不受同源策略约束来跨域获取数据。"><a href="#可以通过动态创建script标签或是写入固定的script标签，然后利用script的src-不受同源策略约束来跨域获取数据。" class="headerlink" title="可以通过动态创建script标签或是写入固定的script标签，然后利用script的src 不受同源策略约束来跨域获取数据。"></a>可以通过动态创建script标签或是写入固定的script标签，然后利用script的src 不受同源策略约束来跨域获取数据。</h5><p><code>html代码：</code></p>
+<h5 id="这里的callback是和后台约定的，两边相同即可。调用的方法为自己自定义的方法"><a href="#这里的callback是和后台约定的，两边相同即可。调用的方法为自己自定义的方法" class="headerlink" title="这里的callback是和后台约定的，两边相同即可。调用的方法为自己自定义的方法"></a>这里的callback是和后台约定的，两边相同即可。调用的方法为自己自定义的方法</h5><p><img src="http://upload-images.jianshu.io/upload_images/7426607-a2a697509010e98e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><code>php代码：</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-ee67fb67ed45c454.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7EBAC307-4925-43C9-A512-DDC16D9E2BE5.png"></p>
+<p><code>运行结果：</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-0281f3ff50d9dd59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="jQuery-用法"><a href="#jQuery-用法" class="headerlink" title="jQuery 用法"></a>jQuery 用法</h2><h4 id="jQuery本身就支持JSONP，jQuery封装的-ajax中有一个dataType属性，将该属性设置成dataType-”jsonp”，就能指定按照jsonp方式访问远程服务从而实现JSONP跨域了。"><a href="#jQuery本身就支持JSONP，jQuery封装的-ajax中有一个dataType属性，将该属性设置成dataType-”jsonp”，就能指定按照jsonp方式访问远程服务从而实现JSONP跨域了。" class="headerlink" title="jQuery本身就支持JSONP，jQuery封装的$.ajax中有一个dataType属性，将该属性设置成dataType:”jsonp”，就能指定按照jsonp方式访问远程服务从而实现JSONP跨域了。"></a>jQuery本身就支持JSONP，jQuery封装的$.ajax中有一个dataType属性，将该属性设置成dataType:”jsonp”，就能指定按照jsonp方式访问远程服务从而实现JSONP跨域了。</h4><font color="#0099ff" size="4" face="黑体">注意：虽然jQuery将JSONP封装在$.ajax中，但是其本质与$.ajax不一样。如果设为dataType: ‘jsonp’，这个$.ajax方法就和ajax XmlHttpRequest没什么关系了，取而代之的则是JSONP协议。</font>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URL</td>
+<td>发送请求的地址</td>
+</tr>
+<tr>
+<td>type</td>
+<td>请求方式默认为get</td>
+</tr>
+<tr>
+<td>dataType</td>
+<td>JSONP格式。使用SONP形式调用函数时，例如callback=?，JQuery将自动替换后一个“?”为正确的函数名，以执行回调函数</td>
+</tr>
+<tr>
+<td>jsonp</td>
+<td>在一个jsonp请求中重写回调函数的名字。该值用来替代在”callback=?”这种GET或POST请求中URL参数里的”callback”部分，例如{jsonp:’onJsonPLoad’}会导致将”onJsonPLoad=?”传给服务器。</td>
+</tr>
+<tr>
+<td>jsonpCallback</td>
+<td>实现跨域请求的时候定义回调函数用的，用于添加自己的回调函数,无此项则回调函数默认为success</td>
+</tr>
+<tr>
+<td>async</td>
+<td>默认设置为true，所有请求均为异步请求</td>
+</tr>
+<tr>
+<td>data</td>
+<td>需要传到后台的数据</td>
+</tr>
+<tr>
+<td>success</td>
+<td>成功之后执行的方法</td>
+</tr>
+</tbody>
+</table>
+<p><code>HTML代码：</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-20d65b7e7e7844cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><code>也可以直接在url里面传递数据</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">url: <span class="string">"http://10.80.1.211/PHP/json_jsonp/jsonp.php?name=胡自鲜&amp;sex=女"</span>,</span><br><span class="line">data:&#123;&#125;,</span><br></pre></td></tr></table></figure>
+<p><code>php代码：</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-a1bd071d434a31c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><code>运行结果：</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-4d7c70805bfe3062.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="我的博客链接"><a href="#我的博客链接" class="headerlink" title="我的博客链接"></a><a href="https://huzixian2017.github.io" title="胡自鲜" target="_blank" rel="external">我的博客链接</a></h4><h4 id="我的简书链接"><a href="#我的简书链接" class="headerlink" title="我的简书链接"></a><a href="http://www.jianshu.com/u/5b22d201dc5a" title="胡自鲜" target="_blank" rel="external">我的简书链接</a></h4><p><strong>更多资源就在我的gitHub</strong>：<a href="https://github.com/huzixian2017/huzixian2017.github.io" target="_blank" rel="external">https://github.com/huzixian2017/huzixian2017.github.io</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/18/JSONP/" data-id="cja540tjz0000uk5npw2w0muz" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-跨域-回调函数/">json 跨域 回调函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-json和jsonp的区别" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -130,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/json和jsonp的区别/" data-id="cja4s5vkl0002u95n3eue1a48" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/json和jsonp的区别/" data-id="cja540tkd0003uk5nsj2kwk6d" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域-同源-json-jsonp/">跨域 同源 json jsonp</a></li></ul>
@@ -178,7 +274,7 @@ dataType:将字符串类型转换为json串
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/jQuery-Ajax请求数据/" data-id="cja4s5vkx0005u95nwjjumdpv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/jQuery-Ajax请求数据/" data-id="cja540tkp0008uk5n5dtv4r0u" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/获取数据-post-get-load/">获取数据 post get load</a></li></ul>
@@ -258,7 +354,7 @@ dataType:将字符串类型转换为json串
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/FormData/" data-id="cja4s5vka0000u95nvt1kivfj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/FormData/" data-id="cja540tkg0004uk5narltbg84" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -339,7 +435,7 @@ dataType:将字符串类型转换为json串
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/jQery-Ajax文件上传/" data-id="cja4s5vkg0001u95nnfe0x0rk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/jQery-Ajax文件上传/" data-id="cja540tkt0009uk5n1f07w7g6" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery-Ajax上传文件/">jQuery Ajax上传文件</a></li></ul>
@@ -378,7 +474,7 @@ dataType:将字符串类型转换为json串
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/testAgain/" data-id="cja4s5vll000cu95ncm5go0u7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/testAgain/" data-id="cja540tkm0005uk5nqtkp27eb" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -415,7 +511,7 @@ dataType:将字符串类型转换为json串
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/test/" data-id="cja4s5vlg0009u95n4sagtws4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/test/" data-id="cja540tky000buk5n37dcbou8" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -460,7 +556,7 @@ dataType:将字符串类型转换为json串
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cja4s5vkt0004u95n4ot2m9z3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cja540tk50001uk5nebx6redy" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -496,7 +592,7 @@ dataType:将字符串类型转换为json串
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/07/预加载/" data-id="cja4s5vln000eu95n2xtss17o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/07/预加载/" data-id="cja540tld000iuk5n8ryo7gan" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -575,44 +671,7 @@ dataType:将字符串类型转换为json串
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/初识HTML5/" data-id="cja4s5vld0006u95n88vv5ngi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第一篇记录" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/11/第一篇记录/" class="article-date">
-  <time datetime="2017-09-11T08:54:55.000Z" itemprop="datePublished">2017-09-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/11/第一篇记录/">第一篇记录</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="博客生涯开始了"><a href="#博客生涯开始了" class="headerlink" title="博客生涯开始了"></a>博客生涯开始了</h2><p>今天是个特殊的日子，纪念我的第一篇博客！！！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/第一篇记录/" data-id="cja4s5vli000au95npx92l5gv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/初识HTML5/" data-id="cja540tl3000duk5nu1d4frtp" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -623,6 +682,10 @@ dataType:将字符串类型转换为json串
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -632,9 +695,9 @@ dataType:将字符串类型转换为json串
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery-Ajax上传文件/">jQuery Ajax上传文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/获取数据-post-get-load/">获取数据 post get load</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域-同源-json-jsonp/">跨域 同源 json jsonp</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery-Ajax上传文件/">jQuery Ajax上传文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json-跨域-回调函数/">json 跨域 回调函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/获取数据-post-get-load/">获取数据 post get load</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域-同源-json-jsonp/">跨域 同源 json jsonp</a></li></ul>
     </div>
   </div>
 
@@ -642,9 +705,9 @@ dataType:将字符串类型转换为json串
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/jQuery-Ajax上传文件/" style="font-size: 10px;">jQuery Ajax上传文件</a> <a href="/tags/获取数据-post-get-load/" style="font-size: 10px;">获取数据 post get load</a> <a href="/tags/跨域-同源-json-jsonp/" style="font-size: 10px;">跨域 同源 json jsonp</a>
+      <a href="/tags/jQuery-Ajax上传文件/" style="font-size: 10px;">jQuery Ajax上传文件</a> <a href="/tags/json-跨域-回调函数/" style="font-size: 10px;">json 跨域 回调函数</a> <a href="/tags/获取数据-post-get-load/" style="font-size: 10px;">获取数据 post get load</a> <a href="/tags/跨域-同源-json-jsonp/" style="font-size: 10px;">跨域 同源 json jsonp</a>
     </div>
   </div>
 
@@ -661,9 +724,13 @@ dataType:将字符串类型转换为json串
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/11/18/JSONP/">JSONP的 JS 和 JQ 用法</a>
+          </li>
         
           <li>
             <a href="/2017/11/18/json和jsonp的区别/">json和jsonp的区别</a>
@@ -681,10 +748,6 @@ dataType:将字符串类型转换为json串
             <a href="/2017/11/16/jQery-Ajax文件上传/">jQery Ajax文件上传</a>
           </li>
         
-          <li>
-            <a href="/2017/11/13/testAgain/">testAgain</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -698,7 +761,7 @@ dataType:将字符串类型转换为json串
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 胡自鲜<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
