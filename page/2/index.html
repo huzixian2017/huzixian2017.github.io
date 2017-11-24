@@ -163,6 +163,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-预加载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/07/预加载/">预加载</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/07/预加载/" class="archive-article-date">
+  	<time datetime="2017-11-07T11:56:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="预加载图片是提高用户体验的一个很好方法。图片预先加载到浏览器中，访问者便可顺利地在你的网站上冲浪，并享受到极快的加载速度。这对图片画廊及图片占据很大比例的网站来说十分有利，它保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。"><a href="#预加载图片是提高用户体验的一个很好方法。图片预先加载到浏览器中，访问者便可顺利地在你的网站上冲浪，并享受到极快的加载速度。这对图片画廊及图片占据很大比例的网站来说十分有利，它保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。" class="headerlink" title="预加载图片是提高用户体验的一个很好方法。图片预先加载到浏览器中，访问者便可顺利地在你的网站上冲浪，并享受到极快的加载速度。这对图片画廊及图片占据很大比例的网站来说十分有利，它保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。"></a>预加载图片是提高用户体验的一个很好方法。图片预先加载到浏览器中，访问者便可顺利地在你的网站上冲浪，并享受到极快的加载速度。这对图片画廊及图片占据很大比例的网站来说十分有利，它保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="selector-tag">DOCTYPE</span> <span class="selector-tag">html</span>&gt;</span><br><span class="line">&lt;html lang="en"&gt;</span><br><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">	&lt;meta charset="UTF-8"&gt;</span><br><span class="line">	&lt;title&gt;预加载&lt;/title&gt;</span><br><span class="line">	&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">		<span class="selector-class">.box</span>&#123;</span><br><span class="line">			<span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">			<span class="attribute">height</span>: <span class="number">800px</span>;</span><br><span class="line">			<span class="attribute">border</span>:<span class="number">1px</span> solid gray;</span><br><span class="line">			<span class="attribute">position</span>: relative;</span><br><span class="line">			<span class="attribute">overflow</span>: hidden;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-class">.progress</span>&#123;</span><br><span class="line">			<span class="attribute">width</span>: <span class="number">1000px</span>;</span><br><span class="line">			<span class="attribute">height</span>: <span class="number">1000px</span>;</span><br><span class="line">			<span class="attribute">background-color</span>: lightblue;</span><br><span class="line">			<span class="attribute">position</span>: absolute;</span><br><span class="line">			<span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-class">.red</span>&#123;</span><br><span class="line">			<span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">			<span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">			<span class="attribute">position</span>: absolute;</span><br><span class="line">			<span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">			<span class="attribute">background-color</span>: red;</span><br><span class="line">			<span class="attribute">display</span>: none;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-tag">img</span>&#123;</span><br><span class="line">			<span class="attribute">width</span>: <span class="number">80px</span>;</span><br><span class="line">			<span class="attribute">margin</span>:<span class="number">5px</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">	&lt;div class="box"&gt;</span><br><span class="line">		&lt;!<span class="selector-tag">--</span>加载页面<span class="selector-tag">--</span>&gt;</span><br><span class="line">		&lt;div class="progress"&gt;loading...&lt;/div&gt;</span><br><span class="line">		&lt;!<span class="selector-tag">--</span>主页面<span class="selector-tag">--</span>&gt;</span><br><span class="line">		&lt;div class="red"&gt;</span><br><span class="line">			&lt;img src="imgs/p_00.jpg" alt=""&gt;</span><br><span class="line">			&lt;img src="imgs/p_01.jpg" alt=""&gt;</span><br><span class="line">			&lt;img src="imgs/p_02.jpg" alt=""&gt;</span><br><span class="line">			&lt;img src="imgs/p_03.jpg" alt=""&gt;</span><br><span class="line">			&lt;img src="imgs/p_04.jpg" alt=""&gt;</span><br><span class="line">			&lt;img src="imgs/p_05.jpg" alt=""&gt;</span><br><span class="line">			&lt;img src="imgs/p_06.jpg" alt=""&gt;</span><br><span class="line">			&lt;img src="imgs/p_07.jpg" alt=""&gt;</span><br><span class="line">			&lt;img src="imgs/p_08.jpg" alt=""&gt;</span><br><span class="line">			&lt;img src="imgs/p_09.jpg" alt=""&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;<span class="selector-tag">script</span>&gt;</span><br><span class="line">	var progress = document.getElementsByClassName('progress')[0];</span><br><span class="line">	var red = document.getElementsByClassName('red')[0];</span><br><span class="line">	var arrSrc = ["imgs/p_00.jpg","imgs/p_01.jpg","imgs/p_02.jpg","imgs/p_03.jpg","imgs/p_04.jpg","imgs/p_05.jpg","imgs/p_06.jpg","imgs/p_07.jpg","imgs/p_09.jpg"];</span><br><span class="line">	var arrImg = [];</span><br><span class="line">	var count = 0;</span><br><span class="line">	for(var i=0; i&lt;arrSrc.length; i++)&#123;</span><br><span class="line">		var img = new Image();</span><br><span class="line">		img.src = arrSrc[i];</span><br><span class="line">		img.onload = function()&#123;</span><br><span class="line">			<span class="selector-tag">count</span>++</span><br><span class="line">			if(count == arrSrc.length)&#123;</span><br><span class="line">				progress.style.display = "none";</span><br><span class="line">				red.style.display = "block";</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/07/预加载/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-初识HTML5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -429,6 +491,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">json 跨域 回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">php 数据库 封装方法</a>
               </li>
              
               <li class="article-tag-list-item">
