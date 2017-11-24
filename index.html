@@ -163,6 +163,142 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-作为前端你需要会的数据库基本操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/24/作为前端你需要会的数据库基本操作/">作为前端你需要会的数据库基本操作</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/24/作为前端你需要会的数据库基本操作/" class="archive-article-date">
+  	<time datetime="2017-11-24T13:31:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此次数据库的操作是用的 php</p>
+<h3 id="数据库menu表"><a href="#数据库menu表" class="headerlink" title="数据库menu表"></a>数据库menu表</h3><p><img src="http://upload-images.jianshu.io/upload_images/7426607-5a601444e63303d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="1-连接数据库"><a href="#1-连接数据库" class="headerlink" title="1.连接数据库"></a>1.连接数据库</h4><p>设置编码格式为UTF-8<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqli_set_charset($link,<span class="string">"utf8"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>连接方法 ： mysqli_connect </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">localhost</td>
+<td style="text-align:left">主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">root</td>
+<td style="text-align:left">MySQL 用户名</td>
+</tr>
+<tr>
+<td style="text-align:center">password</td>
+<td style="text-align:left">MySQL 密码</td>
+</tr>
+<tr>
+<td style="text-align:center">mydb</td>
+<td style="text-align:left">数据库的名称</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义 link 变量保存连接的数据库</span></span><br><span class="line">$link = mysqli_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"123456"</span>,<span class="string">"mydb"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="2-取值"><a href="#2-取值" class="headerlink" title="2 取值"></a>2 取值</h4><p>定义一个变量保存语句 ：从menu表中选择 id = 1 的 menu_name 名<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sql = <span class="string">"select menu_name from menu where id=1"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>然后将该语句传到数据库执行<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$result = mysqli_query($link,$sql);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-如果查询成功，就会返回一个结果集对象"><a href="#3-如果查询成功，就会返回一个结果集对象" class="headerlink" title="3 如果查询成功，就会返回一个结果集对象"></a>3 如果查询成功，就会返回一个结果集对象</h3><h4 id="1-mysql-fetch-all-函数从结果集中取得多行作为关联数组。-返回根据从结果集取得的行数组，如果没有更多行，则返回-false。"><a href="#1-mysql-fetch-all-函数从结果集中取得多行作为关联数组。-返回根据从结果集取得的行数组，如果没有更多行，则返回-false。" class="headerlink" title="(1) . mysql_fetch_all() 函数从结果集中取得多行作为关联数组。 返回根据从结果集取得的行数组，如果没有更多行，则返回 false。"></a>(1) . mysql_fetch_all() 函数从结果集中取得多行作为关联数组。 返回根据从结果集取得的行数组，如果没有更多行，则返回 false。</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MYSQLI_ASSOC</td>
+<td style="text-align:left">返回的是一个关联数组</td>
+</tr>
+<tr>
+<td style="text-align:left">MYSQLI_NUM</td>
+<td style="text-align:left">返回的是一个数值下标的数组</td>
+</tr>
+<tr>
+<td style="text-align:left">MYSQLI_BOTH</td>
+<td style="text-align:left">返回既有下标又有关联数组</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询 id=1 的这条数据的所有字段名 menu_name, menu_price, pic</span></span><br><span class="line">$sql = <span class="string">"select * from menu where id=1"</span>;</span><br><span class="line">$result = mysqli_query($link,$sql);</span><br><span class="line">$data = mysqli_fetch_all($result,MYSQLI_ASSOC);</span><br></pre></td></tr></table></figure>
+<h5 id="前台就可以通过获取php从数据库取得的数据，进行赋值"><a href="#前台就可以通过获取php从数据库取得的数据，进行赋值" class="headerlink" title="前台就可以通过获取php从数据库取得的数据，进行赋值"></a>前台就可以通过获取php从数据库取得的数据，进行赋值</h5><p>eg:  “*”代表查询 id = 1 的当条数据所有字段<br>php代码：<br><img src="http://upload-images.jianshu.io/upload_images/7426607-82ab9ee681d18671.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>HTML代码：<br><img src="http://upload-images.jianshu.io/upload_images/7426607-d086866be8cd40e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>运行结果：<br><img src="http://upload-images.jianshu.io/upload_images/7426607-8d7aed6c7ecb00eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="2-mysqli-fetch-assoc-函数从结果集中取得一行作为关联数组。"><a href="#2-mysqli-fetch-assoc-函数从结果集中取得一行作为关联数组。" class="headerlink" title="(2) . mysqli_fetch_assoc() 函数从结果集中取得一行作为关联数组。"></a>(2) . mysqli_fetch_assoc() 函数从结果集中取得一行作为关联数组。</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$sql = <span class="string">"select menu_name from menu where id=1"</span>;</span><br><span class="line">$result = mysqli_query($link,$sql);</span><br><span class="line">$data = mysqli_fetch_assoc($result);</span><br></pre></td></tr></table></figure>
+<p>eg：查询 id = 1 的当条数据的字段名menu_name<br>php代码：<br><img src="http://upload-images.jianshu.io/upload_images/7426607-b5c4ff3625082da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>html代码：<br><img src="http://upload-images.jianshu.io/upload_images/7426607-d85e2b93b481bcf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>运行结果：<br><img src="http://upload-images.jianshu.io/upload_images/7426607-f7d0dffb8a85ecc7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="5-数据库添加数据"><a href="#5-数据库添加数据" class="headerlink" title="5.数据库添加数据"></a>5.数据库添加数据</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	$link = mysqli_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">""</span>,<span class="string">"mydb"</span>);</span><br><span class="line">	mysqli_set_charset($link,<span class="string">"utf8"</span>);</span><br><span class="line">	$sql = <span class="string">"insert into menu (`menu_name`,`menu_price`,`pic`) values('西红柿炒蛋',20,'1.jpg');"</span>;</span><br><span class="line">	mysqli_query($link,$sql);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-数据库删除数据"><a href="#6-数据库删除数据" class="headerlink" title="6.数据库删除数据"></a>6.数据库删除数据</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	$link = mysqli_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">""</span>,<span class="string">"mydb"</span>);</span><br><span class="line">	mysqli_set_charset($link,<span class="string">"utf8"</span>);</span><br><span class="line">	$sql = <span class="string">"DELETE FROM `menu` WHERE id=10;"</span>;</span><br><span class="line">	mysqli_query($link,$sql);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-关闭数组"><a href="#6-关闭数组" class="headerlink" title="6.关闭数组"></a>6.关闭数组</h3><p>mysqli_close($link);         </p>
+<h4 id="我的简书链接"><a href="#我的简书链接" class="headerlink" title="我的简书链接"></a><a href="http://www.jianshu.com/u/5b22d201dc5a" title="胡自鲜" target="_blank" rel="external">我的简书链接</a></h4><p><strong>更多资源就在我的gitHub</strong>：<a href="https://github.com/huzixian2017/huzixian2017.github.io" target="_blank" rel="external">https://github.com/huzixian2017/huzixian2017.github.io</a>               </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据库 php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/24/作为前端你需要会的数据库基本操作/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-你绝对没听过的GET和POST的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1070,111 +1206,6 @@ dataType:将字符串类型转换为json串
 
 
   
-    <article id="post-初识HTML5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/13/初识HTML5/">初识HTML5</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/13/初识HTML5/" class="archive-article-date">
-  	<time datetime="2017-10-13T15:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="html5-≈-html5新增标签以及规范"><a href="#html5-≈-html5新增标签以及规范" class="headerlink" title="html5 ≈ html5新增标签以及规范"></a>html5 ≈ html5新增标签以及规范</h6><h6 id="html5-≈-html5新增标签-css3-JavaScript-API-应用程序接口，通过JavaScript调用-，不调用时不会触发"><a href="#html5-≈-html5新增标签-css3-JavaScript-API-应用程序接口，通过JavaScript调用-，不调用时不会触发" class="headerlink" title="html5 ≈ html5新增标签 + css3 + JavaScript API(应用程序接口，通过JavaScript调用 ，不调用时不会触发)"></a>html5 ≈ html5新增标签 + css3 + JavaScript API(应用程序接口，通过JavaScript调用 ，不调用时不会触发)</h6><h5 id="发展历史："><a href="#发展历史：" class="headerlink" title="发展历史："></a>发展历史：</h5><p>HTML4.01 ——&gt; XHTML(X：xml)——&gt; HTML5</p>
-<h5 id="html5属性规范"><a href="#html5属性规范" class="headerlink" title="html5属性规范 :"></a>html5属性规范 :</h5><p>1.自定义属性以 data-  开头<br>2.img input 可以不闭合</p>
-<h3 id="html5新增标签："><a href="#html5新增标签：" class="headerlink" title="html5新增标签："></a>html5新增标签：</h3><pre><code>&lt;header&gt;  元素表示一组引导性的帮助，可能包含标题元素，也可以包含其他元素，像logo、
-          分节头部、搜索表单等。
-
-&lt;main&gt;    HTML Main元素呈现了文档body或应用的主体部分。主体部分由与文档直接相关，
-          或者扩展于文档的中心主题、应用的主要功能部分的内容组成。这部分内容在文档中
-          应当是独一无二的，不包含任何在一系列文档中重复的内容，比如侧边栏，导航栏链接，
-          版权信息，网站logo，搜索框（除非搜索框作为文档的主要功能）。
-
-          注意: &lt;main&gt;标签不能是以下元素的继承&lt;article&gt;、&lt;aside&gt;、&lt;footer&gt;
-               &lt;header&gt;或&lt;nav&gt;
-               在一个文档中不能出现一个以上的 &lt;main&gt;标签    
-&lt;aside&gt;   元素表示一个和其余页面内容几乎无关的部分，被认为是独立于该内容的一部分并且
-          可以被单独的拆分出来而不会使整体受影响。其通常表现为侧边栏或者嵌入内容。他们
-          通常包含在工具条，例如来自词汇表的定义。也可能有其他类型的信息，例如相关的广
-          告、笔者的传记、web 应用程序、个人资料信息，或在博客上的相关链接。
-
-          注意：不要将 &lt;aside&gt; 元素去标记括号内的文本，因为这种类型的文本（即括号内的
-          文本）被认为是其内容流的一部分。
-
-&lt;footer&gt;  元素表示最近一个章节内容或者根节点（sectioning root ）元素的页脚。一个页脚
-          通常包含该章节作者、版权数据或者与文档相关的链接等信息。
-
-&lt;section&gt; 表示文档中的一个区域（或节），比如，内容中的一个专题组，一般来说会有包含一个
-         标题（heading）。一般通过是否包含一个标题（h1~h6 element）作为子节点 来 
-         辨识每一个&lt;section&gt;。　
-
-          注意：如果元素内容可以分为几个部分的话，应该使用 &lt;article&gt;而不是&lt;section&gt;　
-               不要把&lt;section&gt;元素作为一个普通的容器来使用，这是本应该是的&lt;div&gt;用法
-              （特别是当片段（the sectioning ）仅仅是为了美化样式的时候）。
-              一般来说，一个&lt;section&gt;应该出现在文档大纲中。
-&lt;article&gt; 元素表示文档、页面、应用或网站中的独立结构，其意在成为可独立分配的或可复用
-          的结构，如在发布中，它可能是论坛帖子、杂志或新闻文章、博客、用户提交的评论、
-          交互式组件，或者其他独立的内容项目。
-
-          注意：当&lt;article&gt;
-              1. 元素嵌套使用时，则该元素代表与外层元素有关的文章。例如，代表博客
-                 评论的&lt;article&gt;元素可嵌套在代表博客文章的&lt;article&gt;元素中。
-              2. &lt;article&gt;元素的作者信息可通过&lt;address&gt;元素提供，但是不适用于
-                 嵌套的&lt;article&gt;元素。
-              3. &lt;article&gt;元素的发布日期和时间可通过&lt;time&gt;元素的pubdate属性表示。
-</code></pre><p>　　　　</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/13/初识HTML5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1280,7 +1311,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cookie session 跨域 存储</a>
+                <a href="javascript:void(0)" class="js-tag color2">跨域 同源 json jsonp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1288,7 +1319,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">跨域 同源 json jsonp</a>
+                <a href="javascript:void(0)" class="js-tag color1">cookie session 跨域 存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数据库 php</a>
               </li>
              
               <li class="article-tag-list-item">
