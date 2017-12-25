@@ -6,33 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>json和jsonp的区别 | 胡自鲜</title>
+  <title>js面向对象 | 胡自鲜</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="( json才是目的，jsonp只是手段）JSON是一种数据交换格式，而JSONP是JSON的一种使用模式，是基于JSON的简单说就是JSON是协议，而JSONP是使用这种协议的一种方法。json和jsonp虽然只有一个字母的区别，但是它们之间扯不上关系。json是一种轻量级的数据交换格式。json返回的是一串数据.jsonp是一种跨域数据交互协议。sonp返回的是脚本代码（包含一个函数调用）。j">
-<meta name="keywords" content="跨域 同源 json jsonp">
+  <meta name="description" content="1. 对象定义的三种方式：1 . var obj1 = {“name” : “张三”}  2 .var  obj2 = new Object({name:”张三”}); 3 . var obj3 = Object.create({name:”张三”})； 1234var obj1 = &amp;#123;	name:&quot;李四&quot;,	age:19,&amp;#125;; 2. 直接定义对象var obj1 = new">
+<meta name="keywords" content="对象 属性 方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="json和jsonp的区别">
-<meta property="og:url" content="http://yoursite.com/2017/11/18/json和jsonp的区别/index.html">
+<meta property="og:title" content="js面向对象">
+<meta property="og:url" content="http://yoursite.com/2017/12/25/js面向对象/index.html">
 <meta property="og:site_name" content="胡自鲜">
-<meta property="og:description" content="( json才是目的，jsonp只是手段）JSON是一种数据交换格式，而JSONP是JSON的一种使用模式，是基于JSON的简单说就是JSON是协议，而JSONP是使用这种协议的一种方法。json和jsonp虽然只有一个字母的区别，但是它们之间扯不上关系。json是一种轻量级的数据交换格式。json返回的是一串数据.jsonp是一种跨域数据交互协议。sonp返回的是脚本代码（包含一个函数调用）。j">
+<meta property="og:description" content="1. 对象定义的三种方式：1 . var obj1 = {“name” : “张三”}  2 .var  obj2 = new Object({name:”张三”}); 3 . var obj3 = Object.create({name:”张三”})； 1234var obj1 = &amp;#123;	name:&quot;李四&quot;,	age:19,&amp;#125;; 2. 直接定义对象var obj1 = new">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-c3ddc0e0f42fafa9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-6e37c6d10dd3739c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-4481b7608c435104.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-25be61dc50774d62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-c16aa6bce3baf938.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-207fe22d0cc90a3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-e3332f63203a9adf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-60d0a118bf73642a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-f82be55d612180b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-3ed0bfa91d1a8380.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-d73322a109df01b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-ab232db1936d3a5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-11-18T03:49:00.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-f7c5cf86d78ad30f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-25T13:00:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="json和jsonp的区别">
-<meta name="twitter:description" content="( json才是目的，jsonp只是手段）JSON是一种数据交换格式，而JSONP是JSON的一种使用模式，是基于JSON的简单说就是JSON是协议，而JSONP是使用这种协议的一种方法。json和jsonp虽然只有一个字母的区别，但是它们之间扯不上关系。json是一种轻量级的数据交换格式。json返回的是一串数据.jsonp是一种跨域数据交互协议。sonp返回的是脚本代码（包含一个函数调用）。j">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7426607-c3ddc0e0f42fafa9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="js面向对象">
+<meta name="twitter:description" content="1. 对象定义的三种方式：1 . var obj1 = {“name” : “张三”}  2 .var  obj2 = new Object({name:”张三”}); 3 . var obj3 = Object.create({name:”张三”})； 1234var obj1 = &amp;#123;	name:&quot;李四&quot;,	age:19,&amp;#125;; 2. 直接定义对象var obj1 = new">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7426607-f7c5cf86d78ad30f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="胡自鲜" type="application/atom+xml">
   
@@ -176,61 +165,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-json和jsonp的区别" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js面向对象" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      json和jsonp的区别
+      js面向对象
     </h1>
   
 
         
-        <a href="/2017/11/18/json和jsonp的区别/" class="archive-article-date">
-  	<time datetime="2017-11-18T03:28:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
+        <a href="/2017/12/25/js面向对象/" class="archive-article-date">
+  	<time datetime="2017-12-25T12:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="json才是目的，jsonp只是手段）"><a href="#json才是目的，jsonp只是手段）" class="headerlink" title="( json才是目的，jsonp只是手段）"></a>( json才是目的，jsonp只是手段）</h2><h5 id="JSON是一种数据交换格式，而JSONP是JSON的一种使用模式，是基于JSON的简单说就是JSON是协议，而JSONP是使用这种协议的一种方法。"><a href="#JSON是一种数据交换格式，而JSONP是JSON的一种使用模式，是基于JSON的简单说就是JSON是协议，而JSONP是使用这种协议的一种方法。" class="headerlink" title="JSON是一种数据交换格式，而JSONP是JSON的一种使用模式，是基于JSON的简单说就是JSON是协议，而JSONP是使用这种协议的一种方法。"></a>JSON是一种数据交换格式，而JSONP是JSON的一种使用模式，是基于JSON的简单说就是JSON是协议，而JSONP是使用这种协议的一种方法。</h5><h5 id="json和jsonp虽然只有一个字母的区别，但是它们之间扯不上关系。"><a href="#json和jsonp虽然只有一个字母的区别，但是它们之间扯不上关系。" class="headerlink" title="json和jsonp虽然只有一个字母的区别，但是它们之间扯不上关系。"></a>json和jsonp虽然只有一个字母的区别，但是它们之间扯不上关系。</h5><h5 id="json是一种轻量级的数据交换格式。json返回的是一串数据"><a href="#json是一种轻量级的数据交换格式。json返回的是一串数据" class="headerlink" title="json是一种轻量级的数据交换格式。json返回的是一串数据."></a>json是一种轻量级的数据交换格式。json返回的是一串数据.</h5><h5 id="jsonp是一种跨域数据交互协议。sonp返回的是脚本代码（包含一个函数调用）。"><a href="#jsonp是一种跨域数据交互协议。sonp返回的是脚本代码（包含一个函数调用）。" class="headerlink" title="jsonp是一种跨域数据交互协议。sonp返回的是脚本代码（包含一个函数调用）。"></a>jsonp是一种跨域数据交互协议。sonp返回的是脚本代码（包含一个函数调用）。</h5><h4 id="json的优点："><a href="#json的优点：" class="headerlink" title="json的优点："></a>json的优点：</h4><ul>
-<li>1.基于纯文本传递极其简单，</li>
-<li>2.轻量级数据格式适合互联网传递，</li>
-<li>3.容易编写和解析。</li>
+        <h4 id="1-对象定义的三种方式："><a href="#1-对象定义的三种方式：" class="headerlink" title="1. 对象定义的三种方式："></a>1. 对象定义的三种方式：</h4><p>1 . var obj1 = {“name” : “张三”} </p>
+<p>2 .var  obj2 = new Object({name:”张三”});</p>
+<p>3 . var obj3 = Object.create({name:”张三”})；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">	name:<span class="string">"李四"</span>,</span><br><span class="line">	age:<span class="number">19</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="2-直接定义对象"><a href="#2-直接定义对象" class="headerlink" title="2. 直接定义对象"></a>2. 直接定义对象</h4><p>var obj1 = new Object({“name”:”张三”});</p>
+<h4 id="3-追加定义对象"><a href="#3-追加定义对象" class="headerlink" title="3. 追加定义对象"></a>3. 追加定义对象</h4><p>var obj3 = new Object();<br>obj3.name = “张三”;<br>obj3.age = “20”;</p>
+<h4 id="4-覆盖定义对象；"><a href="#4-覆盖定义对象；" class="headerlink" title="4. 覆盖定义对象；"></a>4. 覆盖定义对象；</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">obj3 = &#123;</span><br><span class="line">	  <span class="string">"height"</span>:<span class="string">"178cm"</span>,</span><br><span class="line">	   hobby:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	      <span class="built_in">console</span>.log(<span class="string">"爱好"</span>);</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-js对象的键名不需要双引号-json的键名需要双引号-规范外单内双"><a href="#5-js对象的键名不需要双引号-json的键名需要双引号-规范外单内双" class="headerlink" title="5. js对象的键名不需要双引号,json的键名需要双引号 规范外单内双"></a>5. js对象的键名不需要双引号,json的键名需要双引号 规范外单内双</h4><p>var json = ‘{“name”:”张三”,”age”:”19”}’;</p>
+<h5 id="6-对象转换成json"><a href="#6-对象转换成json" class="headerlink" title="6. 对象转换成json"></a>6. 对象转换成json</h5><pre><code>var json1 = JSON.stringify(obj3);
+</code></pre><h5 id="7-json数据转换成对象"><a href="#7-json数据转换成对象" class="headerlink" title="7. json数据转换成对象"></a>7. json数据转换成对象</h5><pre><code>var json2 = JSON.parse(json1);
+</code></pre><h4 id="8-传值与传值"><a href="#8-传值与传值" class="headerlink" title="8. 传值与传值"></a>8. 传值与传值</h4><ul>
+<li><h5 id="传值："><a href="#传值：" class="headerlink" title="传值："></a>传值：</h5><pre><code>var a = 10;
+var b = a;
+b = 5;
+console.log(a);//10
+</code></pre></li>
+<li><h5 id="传址：对象赋值取相同的内存地址；"><a href="#传址：对象赋值取相同的内存地址；" class="headerlink" title="传址：对象赋值取相同的内存地址；"></a>传址：对象赋值取相同的内存地址；</h5><pre><code>var obj = {
+    a:10
+}
+var obj2 = obj;
+obj2.a = 5;
+console.log(obj.a);//5
+</code></pre><h4 id="9-深度拷贝；arr-和-arr2之间不会有联系"><a href="#9-深度拷贝；arr-和-arr2之间不会有联系" class="headerlink" title="9. 深度拷贝；arr 和 arr2之间不会有联系"></a>9. 深度拷贝；arr 和 arr2之间不会有联系</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = arr;</span><br><span class="line"><span class="keyword">var</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(arr));</span><br><span class="line">arr2[<span class="number">2</span>] = <span class="number">7</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line"><span class="built_in">console</span>.log(arr2);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h4 id="ajax和jsonp的区别："><a href="#ajax和jsonp的区别：" class="headerlink" title="ajax和jsonp的区别："></a>ajax和jsonp的区别：</h4><p>相同点：都是请求一个url<br><br>不同点：ajax的核心是通过xmlHttpRequest获取内容<br>jsonp的核心则是动态添加script标签来调用服务器 提供的js脚本。</p>
-<h4 id="为什么要用jsonp"><a href="#为什么要用jsonp" class="headerlink" title="为什么要用jsonp?"></a>为什么要用jsonp?</h4><p>json是理想的数据交换格式，但没办法跨域直接获取，于是就将json包裹(padding)在一个合法的js语句中作为js文件传过去。这就是json和jsonp的区别，json是想要的东西，jsonp是达到这个目的而普遍采用的一种方法，当然最终获得和处理的还是json。所以说json是目的，jsonp只是手段。json总会用到，而jsonp只有在跨域获取数据才会用到。</p>
-<h2 id="原生js的jsonp"><a href="#原生js的jsonp" class="headerlink" title="原生js的jsonp"></a>原生js的jsonp</h2><h4 id="假如我写了个html页面，页面里有个请求，请求的是一个json数据-同源状态下，没有跨域"><a href="#假如我写了个html页面，页面里有个请求，请求的是一个json数据-同源状态下，没有跨域" class="headerlink" title="假如我写了个html页面，页面里有个请求，请求的是一个json数据(同源状态下，没有跨域)"></a>假如我写了个html页面，页面里有个请求，请求的是一个json数据(同源状态下，没有跨域)</h4><p><code>html代码：</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-c3ddc0e0f42fafa9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><code>json代码：</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-6e37c6d10dd3739c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><code>控制台输出：</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-4481b7608c435104.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h4 id="将上面的链接地址的域名换一下，就报错了，很显然，提示跨域了！怎么搞？这时jsonp就要出马了！"><a href="#将上面的链接地址的域名换一下，就报错了，很显然，提示跨域了！怎么搞？这时jsonp就要出马了！" class="headerlink" title="将上面的链接地址的域名换一下，就报错了，很显然，提示跨域了！怎么搞？这时jsonp就要出马了！"></a>将上面的链接地址的域名换一下，就报错了，很显然，提示跨域了！怎么搞？这时jsonp就要出马了！</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url: <span class="string">'http://10.80.1.211/PHP/json_jsonp/a.json'</span>,</span><br></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-25be61dc50774d62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h4 id="jsonp的实现核心就是利用script标签的跨域能力！于是我们灵机一动，似乎可以这么搞，动态生成一个script标签，把json的url赋值给script的src属性，然后再把这个script标签插入dom里…"><a href="#jsonp的实现核心就是利用script标签的跨域能力！于是我们灵机一动，似乎可以这么搞，动态生成一个script标签，把json的url赋值给script的src属性，然后再把这个script标签插入dom里…" class="headerlink" title="jsonp的实现核心就是利用script标签的跨域能力！于是我们灵机一动，似乎可以这么搞，动态生成一个script标签，把json的url赋值给script的src属性，然后再把这个script标签插入dom里…"></a>jsonp的实现核心就是利用script标签的跨域能力！于是我们灵机一动，似乎可以这么搞，动态生成一个script标签，把json的url赋值给script的src属性，然后再把这个script标签插入dom里…</h4><p><img src="http://upload-images.jianshu.io/upload_images/7426607-c16aa6bce3baf938.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h4 id="我们创建了一个script标签，而标签内包裹的内容正是需要的json数据，但是报错如下："><a href="#我们创建了一个script标签，而标签内包裹的内容正是需要的json数据，但是报错如下：" class="headerlink" title="我们创建了一个script标签，而标签内包裹的内容正是需要的json数据，但是报错如下："></a>我们创建了一个script标签，而标签内包裹的内容正是需要的json数据，但是报错如下：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7426607-207fe22d0cc90a3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h4 id="原因是因为json数据并不是合法的js语句，把上面的json数据放在一个回调函数中是最简单的方法："><a href="#原因是因为json数据并不是合法的js语句，把上面的json数据放在一个回调函数中是最简单的方法：" class="headerlink" title="原因是因为json数据并不是合法的js语句，把上面的json数据放在一个回调函数中是最简单的方法："></a>原因是因为json数据并不是合法的js语句，把上面的json数据放在一个回调函数中是最简单的方法：</h4><p><code>html代码</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-e3332f63203a9adf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><code>php代码</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-60d0a118bf73642a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><code>运行结果</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-f82be55d612180b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h2 id="JQuery对jsonp的封装"><a href="#JQuery对jsonp的封装" class="headerlink" title="JQuery对jsonp的封装"></a>JQuery对jsonp的封装</h2><h5 id="为了便于开发，jq对jsonp也进行了封装，封装在了ajax方法中。"><a href="#为了便于开发，jq对jsonp也进行了封装，封装在了ajax方法中。" class="headerlink" title="为了便于开发，jq对jsonp也进行了封装，封装在了ajax方法中。"></a>为了便于开发，jq对jsonp也进行了封装，封装在了ajax方法中。</h5><p><code>html代码</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-3ed0bfa91d1a8380.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><code>php代码</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-d73322a109df01b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><code>运行结果</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-ab232db1936d3a5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求，这就是jsonp的核心。</p>
-<h5 id="jsonp原理："><a href="#jsonp原理：" class="headerlink" title="jsonp原理："></a>jsonp原理：</h5><ul>
-<li>1.首先在客户端注册一个callback, 然后把callback的名字传给服务器。</li>
-<li>2.服务器先生成 json 数据。 然后以 javascript 语法的方式，生成一个function , function 名字就是传递上来的参数 jsonp. 最后将 json 数据直接以入参的方式，放置到 function 中，这样就生成了一段 js 语法的文档，返回给客户端。</li>
-<li>3.客户端浏览器，解析script标签，并执行返回的 javascript 文档，此时数据作为参数，传入到了客户端预先定义好的 callback 函数里.（动态执行回调函数）</li>
-</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-f7c5cf86d78ad30f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="10-对象属性和方法的调用"><a href="#10-对象属性和方法的调用" class="headerlink" title="10. 对象属性和方法的调用"></a>10. 对象属性和方法的调用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dog = &#123;</span><br><span class="line">			name:<span class="string">"wuli"</span>,</span><br><span class="line">			gender:<span class="string">"female"</span>,</span><br><span class="line">			eat:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">"吃"</span>);</span><br><span class="line">			&#125;,</span><br><span class="line">			play:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">"撒欢"</span>);</span><br><span class="line">			&#125;,</span><br><span class="line">			call:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">"叫"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">console</span>.log(dog);</span><br><span class="line"><span class="comment">//		调用属性</span></span><br><span class="line">		<span class="built_in">console</span>.log(dog.name);</span><br><span class="line"><span class="comment">//		调用方法</span></span><br><span class="line">		dog.eat();</span><br><span class="line">		dog.play();</span><br><span class="line">		dog.call();</span><br></pre></td></tr></table></figure>
+<h4 id="11-什么是原型链？"><a href="#11-什么是原型链？" class="headerlink" title="11. 什么是原型链？"></a>11. 什么是原型链？</h4><p>答：当访问一个对象的属性或方法时，会先在对象自身上查找属性或方法是否存在，如果存在就使用对象自身的属性或方法。如果不存在就去创建对象的构造函数的原型对象中查找 ，依此类推，直到找到为止。如果到顶层对象中还找不到，则返回 undefined。</p>
+<h4 id="12-js内置对象"><a href="#12-js内置对象" class="headerlink" title="12. js内置对象"></a>12. js内置对象</h4><p>答：Object,Array,String,Number,Boolean,Date,Function<br>可以方便的使用一些方法和常量,譬如String里面就有很多字符串函数， Date可以处理时间</p>
 
       
 
@@ -265,7 +248,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">跨域 同源 json jsonp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">对象 属性 方法</a>
         		</li>
       		
 		</ul>
@@ -321,7 +304,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/11/18/json和jsonp的区别/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/25/js面向对象/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,18 +318,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/18/JSONP/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JSONP的 JS 和 JQ 用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/16/jQuery-Ajax请求数据/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript 和 jQuery 的Ajax 用法</div>
+    <a href="/2017/11/24/PHP操作数据库的封装方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP操作数据库的封装方法</div>
       <i class="icon-circle-right"></i>
     </a>
   

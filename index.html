@@ -163,6 +163,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/25/js面向对象/">js面向对象</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/25/js面向对象/" class="archive-article-date">
+  	<time datetime="2017-12-25T12:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-对象定义的三种方式："><a href="#1-对象定义的三种方式：" class="headerlink" title="1. 对象定义的三种方式："></a>1. 对象定义的三种方式：</h4><p>1 . var obj1 = {“name” : “张三”} </p>
+<p>2 .var  obj2 = new Object({name:”张三”});</p>
+<p>3 . var obj3 = Object.create({name:”张三”})；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">	name:<span class="string">"李四"</span>,</span><br><span class="line">	age:<span class="number">19</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="2-直接定义对象"><a href="#2-直接定义对象" class="headerlink" title="2. 直接定义对象"></a>2. 直接定义对象</h4><p>var obj1 = new Object({“name”:”张三”});</p>
+<h4 id="3-追加定义对象"><a href="#3-追加定义对象" class="headerlink" title="3. 追加定义对象"></a>3. 追加定义对象</h4><p>var obj3 = new Object();<br>obj3.name = “张三”;<br>obj3.age = “20”;</p>
+<h4 id="4-覆盖定义对象；"><a href="#4-覆盖定义对象；" class="headerlink" title="4. 覆盖定义对象；"></a>4. 覆盖定义对象；</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">obj3 = &#123;</span><br><span class="line">	  <span class="string">"height"</span>:<span class="string">"178cm"</span>,</span><br><span class="line">	   hobby:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	      <span class="built_in">console</span>.log(<span class="string">"爱好"</span>);</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-js对象的键名不需要双引号-json的键名需要双引号-规范外单内双"><a href="#5-js对象的键名不需要双引号-json的键名需要双引号-规范外单内双" class="headerlink" title="5. js对象的键名不需要双引号,json的键名需要双引号 规范外单内双"></a>5. js对象的键名不需要双引号,json的键名需要双引号 规范外单内双</h4><p>var json = ‘{“name”:”张三”,”age”:”19”}’;</p>
+<h5 id="6-对象转换成json"><a href="#6-对象转换成json" class="headerlink" title="6. 对象转换成json"></a>6. 对象转换成json</h5><pre><code>var json1 = JSON.stringify(obj3);
+</code></pre><h5 id="7-json数据转换成对象"><a href="#7-json数据转换成对象" class="headerlink" title="7. json数据转换成对象"></a>7. json数据转换成对象</h5><pre><code>var json2 = JSON.parse(json1);
+</code></pre><h4 id="8-传值与传值"><a href="#8-传值与传值" class="headerlink" title="8. 传值与传值"></a>8. 传值与传值</h4><ul>
+<li><h5 id="传值："><a href="#传值：" class="headerlink" title="传值："></a>传值：</h5><pre><code>var a = 10;
+var b = a;
+b = 5;
+console.log(a);//10
+</code></pre></li>
+<li><h5 id="传址：对象赋值取相同的内存地址；"><a href="#传址：对象赋值取相同的内存地址；" class="headerlink" title="传址：对象赋值取相同的内存地址；"></a>传址：对象赋值取相同的内存地址；</h5><pre><code>var obj = {
+    a:10
+}
+var obj2 = obj;
+obj2.a = 5;
+console.log(obj.a);//5
+</code></pre><h4 id="9-深度拷贝；arr-和-arr2之间不会有联系"><a href="#9-深度拷贝；arr-和-arr2之间不会有联系" class="headerlink" title="9. 深度拷贝；arr 和 arr2之间不会有联系"></a>9. 深度拷贝；arr 和 arr2之间不会有联系</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = arr;</span><br><span class="line"><span class="keyword">var</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(arr));</span><br><span class="line">arr2[<span class="number">2</span>] = <span class="number">7</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line"><span class="built_in">console</span>.log(arr2);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-f7c5cf86d78ad30f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="10-对象属性和方法的调用"><a href="#10-对象属性和方法的调用" class="headerlink" title="10. 对象属性和方法的调用"></a>10. 对象属性和方法的调用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dog = &#123;</span><br><span class="line">			name:<span class="string">"wuli"</span>,</span><br><span class="line">			gender:<span class="string">"female"</span>,</span><br><span class="line">			eat:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">"吃"</span>);</span><br><span class="line">			&#125;,</span><br><span class="line">			play:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">"撒欢"</span>);</span><br><span class="line">			&#125;,</span><br><span class="line">			call:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">"叫"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">console</span>.log(dog);</span><br><span class="line"><span class="comment">//		调用属性</span></span><br><span class="line">		<span class="built_in">console</span>.log(dog.name);</span><br><span class="line"><span class="comment">//		调用方法</span></span><br><span class="line">		dog.eat();</span><br><span class="line">		dog.play();</span><br><span class="line">		dog.call();</span><br></pre></td></tr></table></figure>
+<h4 id="11-什么是原型链？"><a href="#11-什么是原型链？" class="headerlink" title="11. 什么是原型链？"></a>11. 什么是原型链？</h4><p>答：当访问一个对象的属性或方法时，会先在对象自身上查找属性或方法是否存在，如果存在就使用对象自身的属性或方法。如果不存在就去创建对象的构造函数的原型对象中查找 ，依此类推，直到找到为止。如果到顶层对象中还找不到，则返回 undefined。</p>
+<h4 id="12-js内置对象"><a href="#12-js内置对象" class="headerlink" title="12. js内置对象"></a>12. js内置对象</h4><p>答：Object,Array,String,Number,Boolean,Date,Function<br>可以方便的使用一些方法和常量,譬如String里面就有很多字符串函数， Date可以处理时间</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">对象 属性 方法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/25/js面向对象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-PHP操作数据库的封装方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1151,77 +1253,6 @@ dataType:将字符串类型转换为json串
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/13/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-13T10:46:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/13/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1319,23 +1350,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">json 跨域 回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">php 数据库 封装方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cookie session 跨域 存储</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jQuery Ajax上传文件</a>
+                <a href="javascript:void(0)" class="js-tag color3">json 跨域 回调函数</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">获取数据 post get load</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jQuery Ajax上传文件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1348,6 +1375,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GET POST http 数据包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">php 数据库 封装方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">对象 属性 方法</a>
               </li>
             
             <div class="clearfix"></div>
