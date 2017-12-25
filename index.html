@@ -163,6 +163,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ES6特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/25/ES6特性/">ES6特性</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/25/ES6特性/" class="archive-article-date">
+  	<time datetime="2017-12-25T13:17:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-ES6-变量声明：var-let，let-是为了取代var-，但是兼容性不好"><a href="#1-ES6-变量声明：var-let，let-是为了取代var-，但是兼容性不好" class="headerlink" title="1. ES6 变量声明：var let，let 是为了取代var ，但是兼容性不好"></a>1. ES6 变量声明：var let，let 是为了取代var ，但是兼容性不好</h4><p>var 只有一层作用域，let有多层作用域</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&#123;&#125;是为了声明作用域</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line">        	<span class="keyword">var</span> b =<span class="number">15</span>;</span><br><span class="line">		<span class="built_in">console</span>.log(a,b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(b);</span><br><span class="line">	<span class="built_in">console</span>.log(a);<span class="comment">//找不到</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-常量：不能被重复定义"><a href="#2-常量：不能被重复定义" class="headerlink" title="2. 常量：不能被重复定义"></a>2. 常量：不能被重复定义</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PI = <span class="string">"3.14159265358979323846"</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="3-字符串模板"><a href="#3-字符串模板" class="headerlink" title="3. 字符串模板"></a>3. 字符串模板</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">"张三"</span>;</span><br><span class="line"><span class="keyword">let</span> str2 = <span class="string">`姓名是<span class="subst">$&#123;name&#125;</span>年龄是19`</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="4-对象简写"><a href="#4-对象简写" class="headerlink" title="4. 对象简写"></a>4. 对象简写</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"张三"</span>;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">	name；</span><br><span class="line">    eat()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"吃"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-工厂模式：防止变量污染"><a href="#5-工厂模式：防止变量污染" class="headerlink" title="5 . 工厂模式：防止变量污染"></a>5 . 工厂模式：防止变量污染</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Factory</span>(<span class="params">height</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//obj人类；</span></span><br><span class="line">	<span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">	obj.height = height;</span><br><span class="line">	obj.name = <span class="string">"张三"</span>;</span><br><span class="line">	obj.age = <span class="number">20</span>;</span><br><span class="line">	obj.hobby = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"喜欢"</span>);</span><br><span class="line">	<span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newFactory = Factory(<span class="string">"178cm"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="6-箭头函数"><a href="#6-箭头函数" class="headerlink" title="6. 箭头函数"></a>6. 箭头函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5写法(有参函数)</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6写法 必须是匿名函数</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="function">(<span class="params">str</span>) =&gt;</span>str;</span><br><span class="line"><span class="built_in">console</span>.log(test(<span class="string">"hello"</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5写法(无参函数)</span></span><br><span class="line"><span class="keyword">var</span> test1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str = <span class="string">"你好"</span>;</span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6写法</span></span><br><span class="line"><span class="keyword">var</span> test1 = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str = <span class="string">"你好"</span>;</span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 作用域和对象冲突：用小括号包裹返回对象,否则当成作用域解析,报错</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="function"><span class="params">()</span> =&gt;</span>(&#123;</span><br><span class="line">	name:<span class="string">"张三"</span>,</span><br><span class="line">	age:<span class="number">17</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="7-箭头函数的this穿透"><a href="#7-箭头函数的this穿透" class="headerlink" title="7. 箭头函数的this穿透"></a>7. 箭头函数的this穿透</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	name:<span class="string">"张三"</span>,</span><br><span class="line">	age:<span class="number">19</span>,</span><br><span class="line">   <span class="comment">// es5 this指向该对象</span></span><br><span class="line">	action:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">// es6 箭头函数 this指向windod this向上一层穿透</span></span><br><span class="line">	action:<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	      <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-隐藏参数"><a href="#8-隐藏参数" class="headerlink" title="8. 隐藏参数"></a>8. 隐藏参数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5 隐藏参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line">test(<span class="string">"1111"</span>,<span class="string">"2222"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 展开运算符</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params">...arr</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(arr);</span><br><span class="line">&#125;</span><br><span class="line">test1(<span class="string">"3333333"</span>,<span class="string">"44444"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="9-类"><a href="#9-类" class="headerlink" title="9. 类"></a>9. 类</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="comment">//类最开始在加载的时候执行</span></span><br><span class="line">	<span class="keyword">constructor</span>(name,age)&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	hobby()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"喜欢"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	showName()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> zs = <span class="keyword">new</span> Person(<span class="string">"zs"</span>,<span class="number">28</span>);</span><br><span class="line"><span class="built_in">console</span>.log(zs.age);</span><br><span class="line">zs.showName();</span><br><span class="line">			</span><br><span class="line"><span class="comment">//类的继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(name,age)&#123;</span><br><span class="line">	        <span class="comment">//super传参，继承属性</span></span><br><span class="line">	        <span class="keyword">super</span>(name,age);</span><br><span class="line">	&#125;</span><br><span class="line">	action()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"我是action函数"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newStudent = <span class="keyword">new</span> Student(<span class="string">"李四"</span>,<span class="number">222</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newStudent.name);</span><br><span class="line">newStudent.hobby();</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ES6 对象 函数</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/25/ES6特性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-构造函数 And 类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1117,124 +1200,6 @@ dataType:将字符串类型转换为json串
 
 
   
-    <article id="post-jQery-Ajax文件上传" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/16/jQery-Ajax文件上传/">jQery Ajax文件上传</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/16/jQery-Ajax文件上传/" class="archive-article-date">
-  	<time datetime="2017-11-16T13:16:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="模拟前台html页面"><a href="#模拟前台html页面" class="headerlink" title="模拟前台html页面"></a>模拟前台html页面</h2><h3 id="1-jQuery插件AjaxFileUpload用来实现ajax文件上传"><a href="#1-jQuery插件AjaxFileUpload用来实现ajax文件上传" class="headerlink" title="1.jQuery插件AjaxFileUpload用来实现ajax文件上传"></a>1.jQuery插件AjaxFileUpload用来实现ajax文件上传</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;script src=<span class="string">"http://libs.baidu.com/jquery/2.0.0/jquery.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script src=<span class="string">"ajaxfileupload.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">	&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">	&lt;body&gt;</span></span><br><span class="line"><span class="regexp">		&lt;form enctype="multipart/</span>form-data<span class="string">" method="</span>post<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	        &lt;input id="</span>img<span class="string">" type="</span>file<span class="string">" name="</span>img<span class="string">" class="</span>input<span class="string">"&gt;</span></span><br><span class="line"><span class="string">  			&lt;button class="</span>button<span class="string">" id="</span>buttonUpload<span class="string">" onclick="</span><span class="keyword">return</span> ajaxFileUpload();<span class="string">"&gt;Upload&lt;/button&gt;</span></span><br><span class="line"><span class="string">		&lt;/form&gt;	</span></span><br><span class="line"><span class="string">		&lt;div id="</span>showtext<span class="string">"&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">		&lt;img src="</span><span class="string">" alt="</span><span class="string">" id="</span>showImg<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">		&lt;script type="</span>text/javascript<span class="string">"&gt; </span></span><br><span class="line"><span class="string">			function ajaxFileUpload()&#123; </span></span><br><span class="line"><span class="string">				$.ajaxFileUpload(&#123; </span></span><br><span class="line"><span class="string">					url:"</span>upfile.php<span class="string">", </span></span><br><span class="line"><span class="string">					secureuri:false, </span></span><br><span class="line"><span class="string">					fileElementId:'img', </span></span><br><span class="line"><span class="string">					dataType: 'text', </span></span><br><span class="line"><span class="string">					processData:false,</span></span><br><span class="line"><span class="string">					success: function (data) &#123; </span></span><br><span class="line"><span class="string">						document.getElementById('showImg').src=data;</span></span><br><span class="line"><span class="string">					&#125; </span></span><br><span class="line"><span class="string">				&#125;) </span></span><br><span class="line"><span class="string">				return false;</span></span><br><span class="line"><span class="string">			&#125; </span></span><br><span class="line"><span class="string">		&lt;/script&gt; </span></span><br><span class="line"><span class="string">	&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-通过jQuery-Ajax使用FormData对象上传文件"><a href="#2-通过jQuery-Ajax使用FormData对象上传文件" class="headerlink" title="2.通过jQuery Ajax使用FormData对象上传文件"></a>2.通过jQuery Ajax使用FormData对象上传文件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">	&lt;body&gt;</span></span><br><span class="line"><span class="regexp">		&lt;form enctype="multipart/</span>form-data<span class="string">" method="</span>post<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	        &lt;input id="</span>img<span class="string">" type="</span>file<span class="string">" name="</span>img<span class="string">"&gt;</span></span><br><span class="line"><span class="string">  			&lt;input type="</span>button<span class="string">" id="</span>button<span class="string">" value="</span>提交<span class="string">"&gt;</span></span><br><span class="line"><span class="string">		&lt;/form&gt;	</span></span><br><span class="line"><span class="string">		&lt;img src="</span><span class="string">" id="</span>tp<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">	&lt;/body&gt;</span></span><br><span class="line"><span class="string">	&lt;script src="</span>http:<span class="comment">//libs.baidu.com/jquery/2.0.0/jquery.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line">	&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">		$(<span class="string">'#button'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line">			formData.append(<span class="string">"img"</span>,<span class="built_in">document</span>.getElementById(<span class="string">'img'</span>).files[<span class="number">0</span>]);</span><br><span class="line">			<span class="built_in">console</span>.log(formData);</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">				type:<span class="string">"post"</span>,</span><br><span class="line">				url:<span class="string">"upfile.php"</span>,</span><br><span class="line">				<span class="comment">//异步</span></span><br><span class="line">				<span class="keyword">async</span>:<span class="literal">true</span>,</span><br><span class="line">				data:formData,</span><br><span class="line">				<span class="comment">//processData 默认为false，当设置为true的时候,jquery ajax </span></span><br><span class="line">				<span class="comment">//Jquery是否对你的数据进行预处理</span></span><br><span class="line">				processData:<span class="literal">false</span>,</span><br><span class="line">				<span class="comment">//Jquery不要修改请求内容类型</span></span><br><span class="line">				contentType:<span class="literal">false</span>,</span><br><span class="line">				success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">					<span class="built_in">document</span>.getElementById(<span class="string">'tp'</span>).src = data;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;)	</span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="后台PHP"><a href="#后台PHP" class="headerlink" title="后台PHP"></a>后台PHP</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="keyword">if</span>(!<span class="keyword">empty</span>($_FILES))&#123;</span><br><span class="line">		move_uploaded_file($_FILES[<span class="string">'img'</span>][<span class="string">'tmp_name'</span>],$_FILES[<span class="string">'img'</span>][<span class="string">'name'</span>]);</span><br><span class="line">		<span class="keyword">echo</span> $_FILES[<span class="string">'img'</span>][<span class="string">'name'</span>];</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"error"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="jQery-Ajax参数"><a href="#jQery-Ajax参数" class="headerlink" title="jQery Ajax参数"></a>jQery Ajax参数</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">参数名</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">url</td>
-<td style="text-align:center">string</td>
-<td style="text-align:left">(默认: 当前页地址) 发送请求的地址</td>
-</tr>
-<tr>
-<td style="text-align:left">type</td>
-<td style="text-align:center">String</td>
-<td style="text-align:left">(默认: “GET”) 请求方式 (“POST” 或 “GET”)，</td>
-<td>默认为 “GET”。</td>
-</tr>
-<tr>
-<td style="text-align:left">async</td>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:left">(默认: true) 默认设置下，所有请求均为异步请求。如果需要发送同步请求，请将此选项设置为 false。注意，同步请求将锁住浏览器，用户其它操作必须等待请求完成才可以执行。</td>
-</tr>
-<tr>
-<td style="text-align:left">contentType</td>
-<td style="text-align:center">String</td>
-<td style="text-align:left">告诉服务器从浏览器提交过来的数据格式。</td>
-</tr>
-<tr>
-<td style="text-align:left">dataType</td>
-<td style="text-align:center">String</td>
-<td style="text-align:left">告诉服务器浏览器可以想要返回的数据格式类型，同时JQuery也会根据该类型对返回的数据进行处理,类型:<br>“xml” :  返回 XML 文档，可用 jQuery 处理。<br>“html” : 返回纯文本 HTML 信息；包含 script 元素<br>“script” : 返回纯文本 JavaScript 代码。不会自动缓存结果<br>“json”: 返回 JSON 数据 。JQuery将返回的字符串格式数据自动转化为Javascript对象，便于直接使用obj.property格式访问</td>
-</tr>
-<tr>
-<td style="text-align:left">processData</td>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:left">(默认: true) 默认情况下，发送的数据将被转换为对象(技术上讲并非字符串) 以配合默认内容类型 “application/x-www-form-urlencoded”。如果要发送 DOM 树信息或其它不希望转换的信息，请设置为 false。</td>
-</tr>
-</tbody>
-</table>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">jQuery Ajax上传文件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/16/jQery-Ajax文件上传/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1330,6 +1295,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ES6 对象 函数</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">json 跨域 回调函数</a>

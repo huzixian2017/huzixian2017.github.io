@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: cookie session 跨域 存储 | 胡自鲜</title>
+  <title>ES6特性 | 胡自鲜</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="若你喜欢怪人 其实我很美">
-<meta property="og:type" content="website">
-<meta property="og:title" content="胡自鲜">
-<meta property="og:url" content="http://yoursite.com/tags/cookie-session-跨域-存储/index.html">
+  <meta name="description" content="1. ES6 变量声明：var let，let 是为了取代var ，但是兼容性不好var 只有一层作用域，let有多层作用域 12345678//&amp;#123;&amp;#125;是为了声明作用域	&amp;#123;		let a = 10;        	var b =15;		console.log(a,b);	&amp;#125;	console.log(b);	console.log(a);//找不到 2. 常">
+<meta name="keywords" content="ES6 对象 函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6特性">
+<meta property="og:url" content="http://yoursite.com/2017/12/25/ES6特性/index.html">
 <meta property="og:site_name" content="胡自鲜">
-<meta property="og:description" content="若你喜欢怪人 其实我很美">
+<meta property="og:description" content="1. ES6 变量声明：var let，let 是为了取代var ，但是兼容性不好var 只有一层作用域，let有多层作用域 12345678//&amp;#123;&amp;#125;是为了声明作用域	&amp;#123;		let a = 10;        	var b =15;		console.log(a,b);	&amp;#125;	console.log(b);	console.log(a);//找不到 2. 常">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-25T13:20:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="胡自鲜">
-<meta name="twitter:description" content="若你喜欢怪人 其实我很美">
+<meta name="twitter:title" content="ES6特性">
+<meta name="twitter:description" content="1. ES6 变量声明：var let，let 是为了取代var ，但是兼容性不好var 只有一层作用域，let有多层作用域 12345678//&amp;#123;&amp;#125;是为了声明作用域	&amp;#123;		let a = 10;        	var b =15;		console.log(a,b);	&amp;#125;	console.log(b);	console.log(a);//找不到 2. 常">
   
     <link rel="alternative" href="/atom.xml" title="胡自鲜" type="application/atom+xml">
   
@@ -161,60 +163,176 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ES6特性" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/21/cookie和session的区别以及用法/" class="archive-article-date">
-  	<time datetime="2017-11-21T14:48:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/21/cookie和session的区别以及用法/">cookie和session的区别以及用法</a>
+    <h1 class="article-title" itemprop="name">
+      ES6特性
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/25/ES6特性/" class="archive-article-date">
+  	<time datetime="2017-12-25T13:17:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-ES6-变量声明：var-let，let-是为了取代var-，但是兼容性不好"><a href="#1-ES6-变量声明：var-let，let-是为了取代var-，但是兼容性不好" class="headerlink" title="1. ES6 变量声明：var let，let 是为了取代var ，但是兼容性不好"></a>1. ES6 变量声明：var let，let 是为了取代var ，但是兼容性不好</h4><p>var 只有一层作用域，let有多层作用域</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&#123;&#125;是为了声明作用域</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line">        	<span class="keyword">var</span> b =<span class="number">15</span>;</span><br><span class="line">		<span class="built_in">console</span>.log(a,b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(b);</span><br><span class="line">	<span class="built_in">console</span>.log(a);<span class="comment">//找不到</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-常量：不能被重复定义"><a href="#2-常量：不能被重复定义" class="headerlink" title="2. 常量：不能被重复定义"></a>2. 常量：不能被重复定义</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PI = <span class="string">"3.14159265358979323846"</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="3-字符串模板"><a href="#3-字符串模板" class="headerlink" title="3. 字符串模板"></a>3. 字符串模板</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">"张三"</span>;</span><br><span class="line"><span class="keyword">let</span> str2 = <span class="string">`姓名是<span class="subst">$&#123;name&#125;</span>年龄是19`</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="4-对象简写"><a href="#4-对象简写" class="headerlink" title="4. 对象简写"></a>4. 对象简写</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"张三"</span>;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">	name；</span><br><span class="line">    eat()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"吃"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-工厂模式：防止变量污染"><a href="#5-工厂模式：防止变量污染" class="headerlink" title="5 . 工厂模式：防止变量污染"></a>5 . 工厂模式：防止变量污染</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Factory</span>(<span class="params">height</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//obj人类；</span></span><br><span class="line">	<span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">	obj.height = height;</span><br><span class="line">	obj.name = <span class="string">"张三"</span>;</span><br><span class="line">	obj.age = <span class="number">20</span>;</span><br><span class="line">	obj.hobby = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"喜欢"</span>);</span><br><span class="line">	<span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newFactory = Factory(<span class="string">"178cm"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="6-箭头函数"><a href="#6-箭头函数" class="headerlink" title="6. 箭头函数"></a>6. 箭头函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5写法(有参函数)</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6写法 必须是匿名函数</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="function">(<span class="params">str</span>) =&gt;</span>str;</span><br><span class="line"><span class="built_in">console</span>.log(test(<span class="string">"hello"</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5写法(无参函数)</span></span><br><span class="line"><span class="keyword">var</span> test1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str = <span class="string">"你好"</span>;</span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6写法</span></span><br><span class="line"><span class="keyword">var</span> test1 = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str = <span class="string">"你好"</span>;</span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 作用域和对象冲突：用小括号包裹返回对象,否则当成作用域解析,报错</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="function"><span class="params">()</span> =&gt;</span>(&#123;</span><br><span class="line">	name:<span class="string">"张三"</span>,</span><br><span class="line">	age:<span class="number">17</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="7-箭头函数的this穿透"><a href="#7-箭头函数的this穿透" class="headerlink" title="7. 箭头函数的this穿透"></a>7. 箭头函数的this穿透</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	name:<span class="string">"张三"</span>,</span><br><span class="line">	age:<span class="number">19</span>,</span><br><span class="line">   <span class="comment">// es5 this指向该对象</span></span><br><span class="line">	action:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">// es6 箭头函数 this指向windod this向上一层穿透</span></span><br><span class="line">	action:<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	      <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-隐藏参数"><a href="#8-隐藏参数" class="headerlink" title="8. 隐藏参数"></a>8. 隐藏参数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5 隐藏参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line">test(<span class="string">"1111"</span>,<span class="string">"2222"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 展开运算符</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params">...arr</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(arr);</span><br><span class="line">&#125;</span><br><span class="line">test1(<span class="string">"3333333"</span>,<span class="string">"44444"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="9-类"><a href="#9-类" class="headerlink" title="9. 类"></a>9. 类</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="comment">//类最开始在加载的时候执行</span></span><br><span class="line">	<span class="keyword">constructor</span>(name,age)&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	hobby()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"喜欢"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	showName()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> zs = <span class="keyword">new</span> Person(<span class="string">"zs"</span>,<span class="number">28</span>);</span><br><span class="line"><span class="built_in">console</span>.log(zs.age);</span><br><span class="line">zs.showName();</span><br><span class="line">			</span><br><span class="line"><span class="comment">//类的继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(name,age)&#123;</span><br><span class="line">	        <span class="comment">//super传参，继承属性</span></span><br><span class="line">	        <span class="keyword">super</span>(name,age);</span><br><span class="line">	&#125;</span><br><span class="line">	action()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"我是action函数"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newStudent = <span class="keyword">new</span> Student(<span class="string">"李四"</span>,<span class="number">222</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newStudent.name);</span><br><span class="line">newStudent.hobby();</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">cookie session 跨域 存储</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ES6 对象 函数</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/25/ES6特性/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/12/25/构造函数 And 类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">构造函数 And 类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -237,9 +355,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
