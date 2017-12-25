@@ -6,27 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>你绝对没听过的GET和POST的区别 | 胡自鲜</title>
+  <title>构造函数 And 类 | 胡自鲜</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大家在面试时一般都会都被问到post和get有什么区别，肯定很多同学都会和我一样想到一大堆什么post比get安全，get比post传的少乱起八糟这样的答案。但是面试官就还是不停的问你，还有呢？还有呢？于是很是费解，还有什么？他想要什么答案？之后上网搜来来回回就那么几个答案，终于被我找到了正确的答案，今天分享给大家。 GET和POST是HTTP请求的两种基本方法，要说它们的区别，接触过WEB开发的">
-<meta name="keywords" content="GET POST http 数据包">
+  <meta name="description" content="构造函数约定俗成：首字母大写；1234567function Dog(name,sex)&amp;#123;	this.name = name;	this.sex = sex;	this.action = function()&amp;#123;		console.log(&quot;吃、叫、撒欢&quot;);	&amp;#125;&amp;#125; 调用构造函数；实例化；关键字：new(把抽象类具体化，把类变成对象);123var xiaoh">
+<meta name="keywords" content="构造函数 继承 类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="你绝对没听过的GET和POST的区别">
-<meta property="og:url" content="http://yoursite.com/2017/11/22/你绝对没听过的GET和POST的区别/index.html">
+<meta property="og:title" content="构造函数 And 类">
+<meta property="og:url" content="http://yoursite.com/2017/12/25/构造函数 And 类/index.html">
 <meta property="og:site_name" content="胡自鲜">
-<meta property="og:description" content="大家在面试时一般都会都被问到post和get有什么区别，肯定很多同学都会和我一样想到一大堆什么post比get安全，get比post传的少乱起八糟这样的答案。但是面试官就还是不停的问你，还有呢？还有呢？于是很是费解，还有什么？他想要什么答案？之后上网搜来来回回就那么几个答案，终于被我找到了正确的答案，今天分享给大家。 GET和POST是HTTP请求的两种基本方法，要说它们的区别，接触过WEB开发的">
+<meta property="og:description" content="构造函数约定俗成：首字母大写；1234567function Dog(name,sex)&amp;#123;	this.name = name;	this.sex = sex;	this.action = function()&amp;#123;		console.log(&quot;吃、叫、撒欢&quot;);	&amp;#125;&amp;#125; 调用构造函数；实例化；关键字：new(把抽象类具体化，把类变成对象);123var xiaoh">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-e52cc116c1664f1d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-3505323e1d6f4f1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-648c924dcfae518b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-12c1cc215c3fbd8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-8357cfa6c719ea35.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-dec641002b141b80.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-11-22T13:49:55.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-c10f61fc59a25172.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-136948024afc417b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-25T13:14:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="你绝对没听过的GET和POST的区别">
-<meta name="twitter:description" content="大家在面试时一般都会都被问到post和get有什么区别，肯定很多同学都会和我一样想到一大堆什么post比get安全，get比post传的少乱起八糟这样的答案。但是面试官就还是不停的问你，还有呢？还有呢？于是很是费解，还有什么？他想要什么答案？之后上网搜来来回回就那么几个答案，终于被我找到了正确的答案，今天分享给大家。 GET和POST是HTTP请求的两种基本方法，要说它们的区别，接触过WEB开发的">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7426607-e52cc116c1664f1d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="构造函数 And 类">
+<meta name="twitter:description" content="构造函数约定俗成：首字母大写；1234567function Dog(name,sex)&amp;#123;	this.name = name;	this.sex = sex;	this.action = function()&amp;#123;		console.log(&quot;吃、叫、撒欢&quot;);	&amp;#125;&amp;#125; 调用构造函数；实例化；关键字：new(把抽象类具体化，把类变成对象);123var xiaoh">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7426607-c10f61fc59a25172.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="胡自鲜" type="application/atom+xml">
   
@@ -170,73 +166,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-你绝对没听过的GET和POST的区别" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-构造函数 And 类" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      你绝对没听过的GET和POST的区别
+      构造函数 And 类
     </h1>
   
 
         
-        <a href="/2017/11/22/你绝对没听过的GET和POST的区别/" class="archive-article-date">
-  	<time datetime="2017-11-22T13:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+        <a href="/2017/12/25/构造函数 And 类/" class="archive-article-date">
+  	<time datetime="2017-12-25T13:13:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>大家在面试时一般都会都被问到post和get有什么区别，肯定很多同学都会和我一样想到一大堆什么post比get安全，get比post传的少乱起八糟这样的答案。但是面试官就还是不停的问你，还有呢？还有呢？于是很是费解，还有什么？他想要什么答案？之后上网搜来来回回就那么几个答案，终于被我找到了正确的答案，今天分享给大家。</p>
-<p>GET和POST是HTTP请求的两种基本方法，要说它们的区别，接触过WEB开发的人都能说出一二。</p>
-<p>最直观的区别就是GET把参数包含在URL中，POST通过request body传递参数。</p>
-<p>你可能自己写过无数个GET和POST请求，或者已经看过很多权威网站总结出的他们的区别，你非常清楚知道什么时候该用什么。</p>
-<p>当你在面试中被问到这个问题，你的内心充满了自信和喜悦。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-e52cc116c1664f1d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4bba2a1dc923dfa23c25aaa92f6218fd.jpg"></p>
-<p>你轻轻松松的给出了一个“标准答案”：</p>
-<ul>
-<li>GET在浏览器回退时是无害的，而POST会再次提交请求。</li>
-<li>GET产生的URL地址可以被Bookmark，而POST不可以。 </li>
-<li>GET请求会被浏览器主动cache，而POST不会，除非手动设置。</li>
-<li>GET请求只能进行url编码，而POST支持多种编码方式。 </li>
-<li>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</li>
-<li>GET请求在URL中传送的参数是有长度限制的，而POST木有。 </li>
-<li>对参数的数据类型，GET只接受ASCII字符，而POST没有限制。</li>
-<li>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</li>
-<li>GET参数通过URL传递，POST放在Request body中。</li>
-</ul>
-<p>“很遗憾，这不是我们要的回答!”</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-3505323e1d6f4f1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7acd61db1832ab31d3d148a99fe42190.jpg"></p>
-<p>请告诉我真相。。。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-648c924dcfae518b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="936fd32709b7e45f6f419cc7bbd09a24.jpg"></p>
-<p>如果我告诉你GET和POST本质上没有区别你信吗?</p>
-<p>让我们扒下GET和POST的外衣，坦诚相见吧!</p>
-<p>GET和POST是什么?HTTP协议中的两种发送请求的方法。</p>
-<p>HTTP是什么?HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。</p>
-<p>HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。</p>
-<p>那么，“标准答案”里的那些区别是怎么回事?</p>
-<p>在我大万维网世界中，TCP就像汽车，我们用TCP来运输数据，它很可靠，从来不会发生丢件少件的现象。但是如果路上跑的全是看起来一模一样的汽车，那这个世界看起来是一团混乱，送急件的汽车可能被前面满载货物的汽车拦堵在路上，整个交通系统一定会瘫痪。为了避免这种情况发生，交通规则HTTP诞生了。HTTP给汽车运输设定了好几个服务类别，有GET, POST, PUT, DELETE等等，HTTP规定，当执行GET请求的时候，要给汽车贴上GET的标签(设置method为GET)，而且要求把传送的数据放在车顶上(url中)以方便记录。如果是POST请求，就要在车上贴上POST的标签，并把货物放在车厢里。当然，你也可以在GET的时候往车厢内偷偷藏点货物，但是这是很不光彩;也可以在POST的时候在车顶上也放一些数据，让人觉得傻乎乎的。HTTP只是个行为准则，而TCP才是GET和POST怎么实现的基本。</p>
-<p>但是，我们只看到HTTP对GET和POST参数的传送渠道(url还是requrest body)提出了要求。“标准答案”里关于参数大小的限制又是从哪来的呢?</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-12c1cc215c3fbd8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2902bf76d4270f495842729679a11dad.png"></p>
-<p>在我大万维网世界中，还有另一个重要的角色：运输公司。不同的浏览器(发起http请求)和服务器(接受http请求)就是不同的运输公司。 虽然理论上，你可以在车顶上无限的堆货物(url中无限加参数)。但是运输公司可不傻，装货和卸货也是有很大成本的，他们会限制单次运输量来控制风险，数据量太大对浏览器和服务器都是很大负担。业界不成文的规定是，(大多数)浏览器通常都会限制url长度在2K个字节，而(大多数)服务器最多处理64K大小的url。超过的部分，恕不处理。如果你用GET服务，在request body偷偷藏了数据，不同服务器的处理方式也是不同的，有些服务器会帮你卸货，读出数据，有些服务器直接忽略，所以，虽然GET可以带request body，也不能保证一定能被接收到哦。</p>
-<p>好了，现在你知道，GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。</p>
-<p>你以为本文就这么结束了?<br><img src="http://upload-images.jianshu.io/upload_images/7426607-8357cfa6c719ea35.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6670c8a93063999ee27a362d642a0ae7.jpg"></p>
-<p>我们的大BOSS还等着出场呢。。。</p>
-<p>这位BOSS有多神秘?当你试图在网上找“GET和POST的区别”的时候，那些你会看到的搜索结果里，从没有提到他。他究竟是什么呢。。。</p>
-<p>GET和POST还有一个重大区别，简单的说：GET产生一个TCP数据包;POST产生两个TCP数据包。</p>
-<p><strong>长的说：</strong><br>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200(返回数据);</p>
-<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok(返回数据)。</p>
-<p>也就是说，GET只需要汽车跑一趟就把货送到了，而POST得跑两趟，第一趟，先去和服务器打个招呼“嗨，我等下要送一批货来，你们打开门迎接我”，然后再回头把货送过去。</p>
-<p>因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑!跳入需谨慎。为什么?</p>
-<p>1. GET与POST都有自己的语义，不能随便混用。</p>
-<p>2. 据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。</p>
-<p>3. 并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。</p>
-<p>现在，当面试官再问你“GET与POST的区别”的时候，你的内心是不是这样的?</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-dec641002b141b80.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4e3c2204ac558fd247f6fa1c98de3762.jpg"></p>
-<h4 id="我的简书链接"><a href="#我的简书链接" class="headerlink" title="我的简书链接"></a><a href="http://www.jianshu.com/u/5b22d201dc5a" title="胡自鲜" target="_blank" rel="external">我的简书链接</a></h4><p><strong>更多资源就在我的gitHub</strong>：<a href="https://github.com/huzixian2017/huzixian2017.github.io" target="_blank" rel="external">https://github.com/huzixian2017/huzixian2017.github.io</a></p>
+        <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><h4 id="约定俗成：首字母大写；"><a href="#约定俗成：首字母大写；" class="headerlink" title="约定俗成：首字母大写；"></a>约定俗成：首字母大写；</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name,sex</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.sex = sex;</span><br><span class="line">	<span class="keyword">this</span>.action = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"吃、叫、撒欢"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="调用构造函数；"><a href="#调用构造函数；" class="headerlink" title="调用构造函数；"></a>调用构造函数；</h4><h5 id="实例化；关键字：new-把抽象类具体化，把类变成对象"><a href="#实例化；关键字：new-把抽象类具体化，把类变成对象" class="headerlink" title="实例化；关键字：new(把抽象类具体化，把类变成对象);"></a>实例化；关键字：new(把抽象类具体化，把类变成对象);</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xiaohei = <span class="keyword">new</span> Dog(<span class="string">"小黑"</span>,<span class="string">"female"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(xiaohei.name);</span><br><span class="line">xiaohei.action();</span><br></pre></td></tr></table></figure>
+<h4 id="new-具体做了什么？三件事"><a href="#new-具体做了什么？三件事" class="headerlink" title="new 具体做了什么？三件事"></a>new 具体做了什么？三件事</h4><p>1 . 创建另一个空的对象</p>
+<pre><code>var obj = {};
+</code></pre><p>2 . 改变this指向：call   aplly    bind</p>
+<pre><code>Dog.call(obj,&quot;小黑&quot;,&quot;female&quot;);
+console.log(obj);
+</code></pre><p>3 . 赋值原型</p>
+<pre><code>obj.__proto__ = Dog.prototype;
+</code></pre><h4 id="构造函数的原型"><a href="#构造函数的原型" class="headerlink" title="构造函数的原型"></a>构造函数的原型</h4><h4 id="对象是由自身和原型共同构成的；构造函数的原型prototype，属性写在构造函数里，方法写在原型上"><a href="#对象是由自身和原型共同构成的；构造函数的原型prototype，属性写在构造函数里，方法写在原型上" class="headerlink" title="对象是由自身和原型共同构成的；构造函数的原型prototype，属性写在构造函数里，方法写在原型上"></a>对象是由自身和原型共同构成的；构造函数的原型prototype，属性写在构造函数里，方法写在原型上</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,height</span>)</span>&#123;</span><br><span class="line">	   <span class="keyword">this</span>.name = name;</span><br><span class="line">	   <span class="keyword">this</span>.age = age;</span><br><span class="line">	   <span class="keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br><span class="line">Person.prototype.action = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//this指实例化的对象 实例化对象共用this</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"姓名是："</span>+<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.hobby = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"喜欢"</span>);</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	action:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	      <span class="built_in">console</span>.log(<span class="string">"run"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newPerson = <span class="keyword">new</span> Person(<span class="string">"张三"</span>,<span class="number">19</span>,<span class="string">"178cm"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="prototype和proto对比，一个实例化之前，表现形式不同而已"><a href="#prototype和proto对比，一个实例化之前，表现形式不同而已" class="headerlink" title="prototype和proto对比，一个实例化之前，表现形式不同而已"></a>prototype和<strong>proto</strong>对比，一个实例化之前，表现形式不同而已</h4><pre><code>console.log(Person.prototype === newPerson.__proto__); //true
+</code></pre><h4 id="通过原型找到构造函数-constructor"><a href="#通过原型找到构造函数-constructor" class="headerlink" title="通过原型找到构造函数 constructor"></a>通过原型找到构造函数 constructor</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor);</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-c10f61fc59a25172.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><h4 id="类的特性：封装-，继承，多态，重载"><a href="#类的特性：封装-，继承，多态，重载" class="headerlink" title="类的特性：封装 ，继承，多态，重载"></a>类的特性：封装 ，继承，多态，重载</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//私有属性；作用域</span></span><br><span class="line">	<span class="keyword">var</span> name = name;</span><br><span class="line">	<span class="comment">//共有属性；</span></span><br><span class="line">	<span class="keyword">this</span>.height = <span class="string">"183cm"</span>;</span><br><span class="line">	<span class="comment">//get方法，通过共有方法访问私有属性</span></span><br><span class="line">	<span class="keyword">this</span>.get = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//set方法：设置私有属性</span></span><br><span class="line">	<span class="keyword">this</span>.set = <span class="function"><span class="keyword">function</span>(<span class="params">newName</span>)</span>&#123;</span><br><span class="line">		name = newName;</span><br><span class="line">		<span class="built_in">console</span>.log(name);<span class="comment">//李四</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newPerson = <span class="keyword">new</span> Person(<span class="string">"张三"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newPerson.get());<span class="comment">//张三</span></span><br><span class="line">newPerson.set(<span class="string">"李四"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="继承-call-apply-bind"><a href="#继承-call-apply-bind" class="headerlink" title="继承   call  apply  bind"></a>继承   call  apply  bind</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Dad</span>(<span class="params">height</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"张三"</span>;</span><br><span class="line">	<span class="keyword">this</span>.age = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">this</span>.height= height;</span><br><span class="line">	<span class="keyword">this</span>.money = <span class="string">"$1000000"</span>;</span><br><span class="line">	<span class="keyword">this</span>.hobby = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	      <span class="built_in">console</span>.log(<span class="string">"喜欢太极"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params">height</span>)</span>&#123;</span><br><span class="line"><span class="comment">//继承的三种方法 call apply bind</span></span><br><span class="line">	Dad.call(<span class="keyword">this</span>,height,money);</span><br><span class="line"> <span class="comment">// Dad.apply(this,[height,money]);</span></span><br><span class="line"> <span class="comment">// Dad.bind(this)(height,money);</span></span><br><span class="line">	<span class="keyword">this</span>.action = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"wan"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newSon = <span class="keyword">new</span> Son(<span class="string">"180cm"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newSon.height);</span><br><span class="line">newSon.hobby();</span><br><span class="line">newSon.action();</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-136948024afc417b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="继承父类原型，涉及到传址问题，影响父级"><a href="#继承父类原型，涉及到传址问题，影响父级" class="headerlink" title="继承父类原型，涉及到传址问题，影响父级"></a>继承父类原型，涉及到传址问题，影响父级</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Student.prototype = Person.prototype;</span><br><span class="line">      <span class="comment">//重写子级的方法会影响父级</span></span><br><span class="line">	Student.prototype.hobby = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"我是重写方法"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="解决传值问题"><a href="#解决传值问题" class="headerlink" title="解决传值问题"></a>解决传值问题</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Link</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Link.prototype = Person.prototype;</span><br><span class="line">Student.prototype = <span class="keyword">new</span> Link();</span><br></pre></td></tr></table></figure>
+<h2 id="ES6-类"><a href="#ES6-类" class="headerlink" title="ES6 类"></a>ES6 类</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	  <span class="comment">//类最开始在加载的时候执行</span></span><br><span class="line">	  <span class="keyword">constructor</span>(name,age)&#123;</span><br><span class="line">	          <span class="keyword">this</span>.name = name;</span><br><span class="line">	          <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">        hobby()&#123;</span><br><span class="line">	        <span class="built_in">console</span>.log(<span class="string">"喜欢"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        showName()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> zs = <span class="keyword">new</span> Person(<span class="string">"zs"</span>,<span class="number">28</span>);</span><br><span class="line"><span class="built_in">console</span>.log(zs.age);</span><br><span class="line">zs.showName();</span><br><span class="line">			</span><br><span class="line"><span class="comment">//类的继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(name,age)&#123;</span><br><span class="line">	        <span class="comment">//super传参，继承属性</span></span><br><span class="line">	        <span class="keyword">super</span>(name,age);</span><br><span class="line">        &#125;</span><br><span class="line">        action()&#123;</span><br><span class="line">	        <span class="built_in">console</span>.log(<span class="string">"我是action函数"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newStudent = <span class="keyword">new</span> Student(<span class="string">"李四"</span>,<span class="number">222</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newStudent.name);</span><br><span class="line">newStudent.hobby();</span><br></pre></td></tr></table></figure>
 
       
 
@@ -271,7 +239,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">GET POST http 数据包</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">构造函数 继承 类</a>
         		</li>
       		
 		</ul>
@@ -327,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/11/22/你绝对没听过的GET和POST的区别/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/25/构造函数 And 类/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -341,18 +309,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/24/作为前端你需要会的数据库基本操作/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          作为前端你需要会的数据库基本操作
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/21/cookie和session的区别以及用法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">cookie和session的区别以及用法</div>
+    <a href="/2017/12/25/js面向对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js面向对象</div>
       <i class="icon-circle-right"></i>
     </a>
   

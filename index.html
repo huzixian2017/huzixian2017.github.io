@@ -163,6 +163,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-构造函数 And 类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/25/构造函数 And 类/">构造函数 And 类</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/25/构造函数 And 类/" class="archive-article-date">
+  	<time datetime="2017-12-25T13:13:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><h4 id="约定俗成：首字母大写；"><a href="#约定俗成：首字母大写；" class="headerlink" title="约定俗成：首字母大写；"></a>约定俗成：首字母大写；</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name,sex</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.sex = sex;</span><br><span class="line">	<span class="keyword">this</span>.action = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"吃、叫、撒欢"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="调用构造函数；"><a href="#调用构造函数；" class="headerlink" title="调用构造函数；"></a>调用构造函数；</h4><h5 id="实例化；关键字：new-把抽象类具体化，把类变成对象"><a href="#实例化；关键字：new-把抽象类具体化，把类变成对象" class="headerlink" title="实例化；关键字：new(把抽象类具体化，把类变成对象);"></a>实例化；关键字：new(把抽象类具体化，把类变成对象);</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xiaohei = <span class="keyword">new</span> Dog(<span class="string">"小黑"</span>,<span class="string">"female"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(xiaohei.name);</span><br><span class="line">xiaohei.action();</span><br></pre></td></tr></table></figure>
+<h4 id="new-具体做了什么？三件事"><a href="#new-具体做了什么？三件事" class="headerlink" title="new 具体做了什么？三件事"></a>new 具体做了什么？三件事</h4><p>1 . 创建另一个空的对象</p>
+<pre><code>var obj = {};
+</code></pre><p>2 . 改变this指向：call   aplly    bind</p>
+<pre><code>Dog.call(obj,&quot;小黑&quot;,&quot;female&quot;);
+console.log(obj);
+</code></pre><p>3 . 赋值原型</p>
+<pre><code>obj.__proto__ = Dog.prototype;
+</code></pre><h4 id="构造函数的原型"><a href="#构造函数的原型" class="headerlink" title="构造函数的原型"></a>构造函数的原型</h4><h4 id="对象是由自身和原型共同构成的；构造函数的原型prototype，属性写在构造函数里，方法写在原型上"><a href="#对象是由自身和原型共同构成的；构造函数的原型prototype，属性写在构造函数里，方法写在原型上" class="headerlink" title="对象是由自身和原型共同构成的；构造函数的原型prototype，属性写在构造函数里，方法写在原型上"></a>对象是由自身和原型共同构成的；构造函数的原型prototype，属性写在构造函数里，方法写在原型上</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,height</span>)</span>&#123;</span><br><span class="line">	   <span class="keyword">this</span>.name = name;</span><br><span class="line">	   <span class="keyword">this</span>.age = age;</span><br><span class="line">	   <span class="keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br><span class="line">Person.prototype.action = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//this指实例化的对象 实例化对象共用this</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"姓名是："</span>+<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.hobby = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"喜欢"</span>);</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	action:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	      <span class="built_in">console</span>.log(<span class="string">"run"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newPerson = <span class="keyword">new</span> Person(<span class="string">"张三"</span>,<span class="number">19</span>,<span class="string">"178cm"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="prototype和proto对比，一个实例化之前，表现形式不同而已"><a href="#prototype和proto对比，一个实例化之前，表现形式不同而已" class="headerlink" title="prototype和proto对比，一个实例化之前，表现形式不同而已"></a>prototype和<strong>proto</strong>对比，一个实例化之前，表现形式不同而已</h4><pre><code>console.log(Person.prototype === newPerson.__proto__); //true
+</code></pre><h4 id="通过原型找到构造函数-constructor"><a href="#通过原型找到构造函数-constructor" class="headerlink" title="通过原型找到构造函数 constructor"></a>通过原型找到构造函数 constructor</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor);</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-c10f61fc59a25172.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><h4 id="类的特性：封装-，继承，多态，重载"><a href="#类的特性：封装-，继承，多态，重载" class="headerlink" title="类的特性：封装 ，继承，多态，重载"></a>类的特性：封装 ，继承，多态，重载</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//私有属性；作用域</span></span><br><span class="line">	<span class="keyword">var</span> name = name;</span><br><span class="line">	<span class="comment">//共有属性；</span></span><br><span class="line">	<span class="keyword">this</span>.height = <span class="string">"183cm"</span>;</span><br><span class="line">	<span class="comment">//get方法，通过共有方法访问私有属性</span></span><br><span class="line">	<span class="keyword">this</span>.get = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//set方法：设置私有属性</span></span><br><span class="line">	<span class="keyword">this</span>.set = <span class="function"><span class="keyword">function</span>(<span class="params">newName</span>)</span>&#123;</span><br><span class="line">		name = newName;</span><br><span class="line">		<span class="built_in">console</span>.log(name);<span class="comment">//李四</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newPerson = <span class="keyword">new</span> Person(<span class="string">"张三"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newPerson.get());<span class="comment">//张三</span></span><br><span class="line">newPerson.set(<span class="string">"李四"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="继承-call-apply-bind"><a href="#继承-call-apply-bind" class="headerlink" title="继承   call  apply  bind"></a>继承   call  apply  bind</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Dad</span>(<span class="params">height</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"张三"</span>;</span><br><span class="line">	<span class="keyword">this</span>.age = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">this</span>.height= height;</span><br><span class="line">	<span class="keyword">this</span>.money = <span class="string">"$1000000"</span>;</span><br><span class="line">	<span class="keyword">this</span>.hobby = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	      <span class="built_in">console</span>.log(<span class="string">"喜欢太极"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params">height</span>)</span>&#123;</span><br><span class="line"><span class="comment">//继承的三种方法 call apply bind</span></span><br><span class="line">	Dad.call(<span class="keyword">this</span>,height,money);</span><br><span class="line"> <span class="comment">// Dad.apply(this,[height,money]);</span></span><br><span class="line"> <span class="comment">// Dad.bind(this)(height,money);</span></span><br><span class="line">	<span class="keyword">this</span>.action = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"wan"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newSon = <span class="keyword">new</span> Son(<span class="string">"180cm"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newSon.height);</span><br><span class="line">newSon.hobby();</span><br><span class="line">newSon.action();</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-136948024afc417b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="继承父类原型，涉及到传址问题，影响父级"><a href="#继承父类原型，涉及到传址问题，影响父级" class="headerlink" title="继承父类原型，涉及到传址问题，影响父级"></a>继承父类原型，涉及到传址问题，影响父级</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Student.prototype = Person.prototype;</span><br><span class="line">      <span class="comment">//重写子级的方法会影响父级</span></span><br><span class="line">	Student.prototype.hobby = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"我是重写方法"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="解决传值问题"><a href="#解决传值问题" class="headerlink" title="解决传值问题"></a>解决传值问题</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Link</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Link.prototype = Person.prototype;</span><br><span class="line">Student.prototype = <span class="keyword">new</span> Link();</span><br></pre></td></tr></table></figure>
+<h2 id="ES6-类"><a href="#ES6-类" class="headerlink" title="ES6 类"></a>ES6 类</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	  <span class="comment">//类最开始在加载的时候执行</span></span><br><span class="line">	  <span class="keyword">constructor</span>(name,age)&#123;</span><br><span class="line">	          <span class="keyword">this</span>.name = name;</span><br><span class="line">	          <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">        hobby()&#123;</span><br><span class="line">	        <span class="built_in">console</span>.log(<span class="string">"喜欢"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        showName()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> zs = <span class="keyword">new</span> Person(<span class="string">"zs"</span>,<span class="number">28</span>);</span><br><span class="line"><span class="built_in">console</span>.log(zs.age);</span><br><span class="line">zs.showName();</span><br><span class="line">			</span><br><span class="line"><span class="comment">//类的继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(name,age)&#123;</span><br><span class="line">	        <span class="comment">//super传参，继承属性</span></span><br><span class="line">	        <span class="keyword">super</span>(name,age);</span><br><span class="line">        &#125;</span><br><span class="line">        action()&#123;</span><br><span class="line">	        <span class="built_in">console</span>.log(<span class="string">"我是action函数"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newStudent = <span class="keyword">new</span> Student(<span class="string">"李四"</span>,<span class="number">222</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newStudent.name);</span><br><span class="line">newStudent.hobby();</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">构造函数 继承 类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/25/构造函数 And 类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1025,110 +1117,6 @@ dataType:将字符串类型转换为json串
 
 
   
-    <article id="post-FormData" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/16/FormData/">FormData</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/16/FormData/" class="archive-article-date">
-  	<time datetime="2017-11-16T13:16:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。</p>
-<h3 id="2-构造函数"><a href="#2-构造函数" class="headerlink" title="2. 构造函数"></a>2. 构造函数</h3><h4 id="创建一个formData对象实例有几种方式"><a href="#创建一个formData对象实例有几种方式" class="headerlink" title="创建一个formData对象实例有几种方式"></a>创建一个formData对象实例有几种方式</h4><h5 id="1、创建一个空对象实例-FormData类型其实是在XMLHttpRequest-2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。"><a href="#1、创建一个空对象实例-FormData类型其实是在XMLHttpRequest-2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。" class="headerlink" title="1、创建一个空对象实例 FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。"></a>1、创建一个空对象实例 FormData类型其实是在XMLHttpRequest 2级定义的，它是为序列化表以及创建与表单格式相同的数据（当然是用于XHR传输）提供便利。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span><br></pre></td></tr></table></figure>
-<p>此时可以调用append()方法来添加数据</p>
-<h5 id="2-使用已有的表单来初始化一个对象实例"><a href="#2-使用已有的表单来初始化一个对象实例" class="headerlink" title="2.使用已有的表单来初始化一个对象实例"></a>2.使用已有的表单来初始化一个对象实例</h5><h6 id="假如现在页面已经有一个表单"><a href="#假如现在页面已经有一个表单" class="headerlink" title="假如现在页面已经有一个表单"></a>假如现在页面已经有一个表单</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form id=<span class="string">"myForm"</span> action=<span class="string">""</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;名字</span><br><span class="line">    &lt;input type=<span class="string">"password"</span> name=<span class="string">"psw"</span>&gt;密码</span><br><span class="line">    &lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/form&gt;</span></span><br></pre></td></tr></table></figure>
-<h6 id="我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象"><a href="#我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象" class="headerlink" title="我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象"></a>我们可以使用这个表单元素作为初始化参数，来实例化一个formData对象</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取页面已有的一个form表单</span></span><br><span class="line">	<span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">"myForm"</span>);</span><br><span class="line"><span class="comment">// 用表单来初始化</span></span><br><span class="line">	<span class="keyword">var</span> formData = <span class="keyword">new</span> FormData(form);</span><br><span class="line"><span class="comment">// 我们可以根据name来访问表单中的字段</span></span><br><span class="line">	<span class="keyword">var</span> name = formData.get(<span class="string">"name"</span>); <span class="comment">// 获取名字</span></span><br><span class="line">	<span class="keyword">var</span> psw = formData.get(<span class="string">"psw"</span>); <span class="comment">// 获取密码</span></span><br><span class="line"><span class="comment">// 当然也可以在此基础上，添加其他数据</span></span><br><span class="line">	formData.append(<span class="string">"token"</span>,<span class="string">"kshdfiwi3rh"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="3-操作方法"><a href="#3-操作方法" class="headerlink" title="3. 操作方法"></a>3. 操作方法</h3><p>首先，我们要明确formData里面存储的数据形式，一对key/value组成一条数据，key是唯一的，一个key可能对应多个value。如果是使用表单初始化，每一个表单字段对应一条数据，它们的HTML name属性即为key值，它们value属性对应value值。</p>
-<table>
-<thead>
-<tr>
-<th>key</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>k1</td>
-<td>[v1,v2,v3]</td>
-</tr>
-<tr>
-<td>k2</td>
-<td>v4</td>
-</tr>
-</tbody>
-</table>
-<h5 id="3-1-获取值"><a href="#3-1-获取值" class="headerlink" title="3.1 获取值"></a>3.1 获取值</h5><p>我们可以通过get(key)/getAll(key)来获取对应的value</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">formData.get(<span class="string">"name"</span>); <span class="comment">// 获取key为name的第一个值</span></span><br><span class="line">formData.get(<span class="string">"name"</span>); <span class="comment">// 返回一个数组，获取key为name的所有值</span></span><br></pre></td></tr></table></figure>
-<h5 id="3-2-添加数据"><a href="#3-2-添加数据" class="headerlink" title="3.2 添加数据"></a>3.2 添加数据</h5><p>我们可以通过append(key, value)来添加数据，如果指定的key不存在则会新增一条数据，如果key存在，则添加到数据的末尾</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v2"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line"></span><br><span class="line">formData.get(<span class="string">"k1"</span>); <span class="comment">// "v1"</span></span><br><span class="line">formData.getAll(<span class="string">"k1"</span>); <span class="comment">// ["v1","v2","v1"]</span></span><br></pre></td></tr></table></figure>
-<h5 id="3-3-设置修改数据"><a href="#3-3-设置修改数据" class="headerlink" title="3.3 设置修改数据"></a>3.3 设置修改数据</h5><p>我们可以通过set(key, value)来设置修改数据，如果指定的key不存在则会新增一条，如果存在，则会修改对应的value值。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.set(<span class="string">"k1"</span>, <span class="string">"1"</span>);</span><br><span class="line">formData.getAll(<span class="string">"k1"</span>); <span class="comment">// ["1"]</span></span><br></pre></td></tr></table></figure>
-<h5 id="3-4-判断是否该数据"><a href="#3-4-判断是否该数据" class="headerlink" title="3.4 判断是否该数据"></a>3.4 判断是否该数据</h5><p>我们可以通过has(key)来判断是否对应的key值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.append(<span class="string">"k2"</span>,<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">formData.has(<span class="string">"k1"</span>); <span class="comment">// true</span></span><br><span class="line">formData.has(<span class="string">"k2"</span>); <span class="comment">// true</span></span><br><span class="line">formData.has(<span class="string">"k3"</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-<h5 id="3-5-删除数据"><a href="#3-5-删除数据" class="headerlink" title="3.5 删除数据"></a>3.5 删除数据</h5><p>通过delete(key)，来删除数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v2"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.delete(<span class="string">"k1"</span>);</span><br><span class="line">formData.getAll(<span class="string">"k1"</span>); <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
-<h5 id="3-6-遍历"><a href="#3-6-遍历" class="headerlink" title="3.6 遍历"></a>3.6 遍历</h5><p>我们可以通过entries()来获取一个迭代器，然后遍历所有的数据，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v2"</span>);</span><br><span class="line">formData.append(<span class="string">"k2"</span>, <span class="string">"v1"</span>);</span><br><span class="line"><span class="keyword">var</span> i = formData.entries();</span><br><span class="line">i.next(); <span class="comment">// &#123;done:false, value:["k1", "v1"]&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:fase, value:["k1", "v2"]&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:fase, value:["k2", "v1"]&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:true, value:undefined&#125;</span></span><br></pre></td></tr></table></figure>
-<p>可以看到返回迭代器的规则</p>
-<p>每调用一次next()返回一条数据，数据的顺序由添加的顺序决定<br>返回的是一个对象，当其done属性为true时，说明已经遍历完所有的数据，这个也可以作为判断的依据<br>返回的对象的value属性以数组形式存储了一对key/value，数组下标0为key，下标1为value，如果一个key值对应多个value，会变成多对key/value返回<br>我们也可以通过values()方法只获取value值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v1"</span>);</span><br><span class="line">formData.append(<span class="string">"k1"</span>, <span class="string">"v2"</span>);</span><br><span class="line">formData.append(<span class="string">"k2"</span>, <span class="string">"v1"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = formData.entries();</span><br><span class="line"></span><br><span class="line">i.next(); <span class="comment">// &#123;done:false, value:"v1"&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:fase, value:"v2"&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:fase, value:"v1"&#125;</span></span><br><span class="line">i.next(); <span class="comment">// &#123;done:true, value:undefined&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-发送数据"><a href="#4-发送数据" class="headerlink" title="4. 发送数据"></a>4. 发送数据</h3><p>我们可以通过xhr来发送数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">"post"</span>,<span class="string">"login"</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">xhr.send(formData);</span><br></pre></td></tr></table></figure>
-<p>这种方式可以来实现文件的异步上传。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/16/FormData/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-jQery-Ajax文件上传" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1377,6 +1365,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GET POST http 数据包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">构造函数 继承 类</a>
               </li>
             
             <div class="clearfix"></div>
