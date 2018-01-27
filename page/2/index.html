@@ -163,6 +163,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jQuery-Ajax请求数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/16/jQuery-Ajax请求数据/">javascript 和 jQuery 的Ajax 用法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/16/jQuery-Ajax请求数据/" class="archive-article-date">
+  	<time datetime="2017-11-16T14:58:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="ajax技术的核心是XMLHttpRequest对象-简称XHR"><a href="#ajax技术的核心是XMLHttpRequest对象-简称XHR" class="headerlink" title="ajax技术的核心是XMLHttpRequest对象(简称XHR)"></a>ajax技术的核心是XMLHttpRequest对象(简称XHR)</h3><h5 id="ajax通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。"><a href="#ajax通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。" class="headerlink" title="ajax通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。"></a>ajax通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。</h5><p>面试必须写的<br>原生javascript Ajax:<br>ajax包括几个步骤：<br><br>1：创建ajax请求<br><br>2：发出http请求 <br><br>3：收到服务器传回的消息 <br><br>4：更新网页数据<br></p>
+<h3 id="xhr-html"><a href="#xhr-html" class="headerlink" title="xhr.html"></a>xhr.html</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">	&lt;body&gt;</span></span><br><span class="line"><span class="regexp">		&lt;div id="show"&gt;&lt;/</span>div&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">		&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">	&lt;/</span>body&gt;</span><br><span class="line">	&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">		<span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'ul'</span>)[<span class="number">0</span>];</span><br><span class="line">		<span class="comment">//创建一个xhr对象</span></span><br><span class="line">		<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//请求过程中，readyState会发生变化</span></span><br><span class="line">		<span class="comment">// 0 - 是初始状态</span></span><br><span class="line">		<span class="comment">// 1 - 是开始创建连接</span></span><br><span class="line">		<span class="comment">// 2 - 客户端向服务端发送数据</span></span><br><span class="line">		<span class="comment">// 3 - 服务端开始向客户端返回数据</span></span><br><span class="line">		<span class="comment">// 4 - 客户端接收数据完毕</span></span><br><span class="line">		xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.readyState);<span class="comment">//1,2,3,4		</span></span><br><span class="line">		&#125;</span><br><span class="line">		xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="comment">//在数据加载完毕后执行onload</span></span><br><span class="line">	<span class="comment">//		if(this.readyState == 4)&#123;</span></span><br><span class="line">	<span class="comment">//			console.log("ok");</span></span><br><span class="line">	<span class="comment">//		&#125;</span></span><br><span class="line">	<span class="comment">//		这是PHP文件传过来的json字符串 this.responseText，需要转为数组</span></span><br><span class="line">	<span class="comment">//		1.可以用json.parse</span></span><br><span class="line">	<span class="comment">//		2.可以用eval</span></span><br><span class="line">	<span class="comment">//		如果 jsondata.php 中的数据没有严格遵守JSON	格式，不能使用JSON和eval</span></span><br><span class="line">	<span class="comment">//		console.log(this.responseText);</span></span><br><span class="line">	<span class="comment">//		console.log(JSON.parse(this.responseText));</span></span><br><span class="line">	<span class="comment">//		console.log(eval("("+this.responseText+")"));</span></span><br><span class="line">	<span class="comment">//		注释掉json格式的数据，可以输出任意文本</span></span><br><span class="line">			<span class="built_in">document</span>.getElementById(<span class="string">"show"</span>).innerHTML = <span class="keyword">this</span>.responseText;</span><br><span class="line">			<span class="keyword">var</span> a = <span class="built_in">JSON</span>.parse(<span class="keyword">this</span>.responseText);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;a.length; i++)&#123;</span><br><span class="line">				<span class="keyword">var</span> lis = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span><br><span class="line">				lis.innerHTML = a[i].title;</span><br><span class="line">				ul.appendChild(lis);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;	</span><br><span class="line">		<span class="comment">//open方法</span></span><br><span class="line">		<span class="comment">//true 异步 false 同步（卡）</span></span><br><span class="line">		xhr.open(<span class="string">"GET"</span>,<span class="string">"xhr.php?action=1&amp;data=abc"</span>,<span class="literal">true</span>);<span class="comment">//创建一个连接</span></span><br><span class="line">		xhr.send(<span class="literal">null</span>);</span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="xhr-php"><a href="#xhr-php" class="headerlink" title="xhr.php"></a>xhr.php</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	<span class="comment">//后台输出json</span></span><br><span class="line">	<span class="comment">//newsL是新闻数据，可能是来自文件存储的数据，也可能是来自数据库</span></span><br><span class="line">	<span class="comment">//sleep(10);//延迟10s执行</span></span><br><span class="line">	</span><br><span class="line"><span class="comment">//	if($_POST['title'])&#123;</span></span><br><span class="line"><span class="comment">//		echo $_POST['title'];</span></span><br><span class="line"><span class="comment">//		echo "&lt;br&gt;";</span></span><br><span class="line"><span class="comment">//		echo $_POST['data'];</span></span><br><span class="line"><span class="comment">//		exit;</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"></span><br><span class="line">	$newsList = array();</span><br><span class="line">	$newsList[<span class="number">0</span>] = array(<span class="string">"title"</span> =&gt; <span class="string">"新闻1"</span>);</span><br><span class="line">	$newsList[<span class="number">1</span>] = array(<span class="string">"title"</span> =&gt; <span class="string">"新闻2"</span>);</span><br><span class="line">	$newsList[<span class="number">2</span>] = array(<span class="string">"title"</span> =&gt; <span class="string">"新闻3"</span>);</span><br><span class="line">	<span class="comment">//将数组变成json串</span></span><br><span class="line">	<span class="comment">//json_encode是json串的编码函数，传入一个数组类型的参数</span></span><br><span class="line">	$jsonstr = json_encode($newsList);</span><br><span class="line"><span class="comment">//	echo "createList(".$jsonstr.")";</span></span><br><span class="line"><span class="comment">//	echo $_GET['callback']."(".$jsonstr.")";</span></span><br><span class="line"><span class="comment">//	echo "-----------";//不是json格式，会报错</span></span><br><span class="line">	echo $jsonstr;<span class="comment">//输出的字符串必须是严格遵守json格式的，才可以使用	JSON.parse();</span></span><br><span class="line"><span class="comment">//	echo "----------";</span></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="jquery-Ajax-是对XMLHTTPRequestrian对象的封装"><a href="#jquery-Ajax-是对XMLHTTPRequestrian对象的封装" class="headerlink" title="jquery Ajax 是对XMLHTTPRequestrian对象的封装"></a>jquery Ajax 是对XMLHTTPRequestrian对象的封装</h3><pre><code>基本方法就是ajax();
+dataType:将字符串类型转换为json串
+参数是一组对象
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type:<span class="string">"get"</span>,</span><br><span class="line">	url:<span class="string">"../弹幕/getdanmu.php"</span>,</span><br><span class="line">	data:&#123;&#125;,</span><br><span class="line">	type:<span class="string">"post"</span>,<span class="comment">//数据提交类型</span></span><br><span class="line">	url:<span class="string">"../弹幕/danmu.php"</span>,<span class="comment">//请求地址</span></span><br><span class="line">	data:&#123;<span class="attr">word</span>:<span class="string">"abc"</span>,<span class="attr">username</span>:<span class="string">"hzx"</span>&#125;,<span class="comment">//发送数据</span></span><br><span class="line">	dataType:<span class="string">"json"</span>,<span class="comment">//返回数据的类型</span></span><br><span class="line">	<span class="keyword">async</span>:<span class="literal">true</span>,<span class="comment">//是否为异步 ，true 异步</span></span><br><span class="line">	success为数据加载完成后的回调函数</span><br><span class="line">	success:<span class="function"><span class="keyword">function</span>(<span class="params">data1</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(data1);</span><br><span class="line">		<span class="keyword">var</span> show = <span class="built_in">document</span>.getElementById(<span class="string">'show'</span>);</span><br><span class="line">		<span class="keyword">for</span>(i <span class="keyword">in</span> data1)&#123;</span><br><span class="line">			show.innerHTML += data1[i]+<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="get方法获取后台数据"><a href="#get方法获取后台数据" class="headerlink" title="get方法获取后台数据"></a>get方法获取后台数据</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.get(<span class="string">"getdanmu.php"</span>,&#123;<span class="attr">word</span>:<span class="string">"abc"</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">data,status</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data,status);</span><br><span class="line">&#125;,<span class="string">"json"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="post方法获取后台数据"><a href="#post方法获取后台数据" class="headerlink" title="post方法获取后台数据"></a>post方法获取后台数据</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.post(<span class="string">"danmu.php"</span>,&#123;<span class="attr">word</span>:<span class="string">"abc"</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">data,status</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data,status);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="load方法引入界面"><a href="#load方法引入界面" class="headerlink" title="load方法引入界面"></a>load方法引入界面</h4><p>在需要弹幕页面的HTML中加入以下代码就可以插入链接的页面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#show"</span>).load(<span class="string">"../web.html"</span>);<span class="comment">//留言导航页</span></span><br><span class="line">$(<span class="string">"#show"</span>).load(<span class="string">"danmu.html"</span>);</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">获取数据 post get load</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/16/jQuery-Ajax请求数据/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-FormData" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -700,7 +783,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 胡自鲜
+    		&copy; 2018 胡自鲜
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -792,6 +875,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">php 数据库 封装方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vue 入门 基础语法</a>
               </li>
              
               <li class="article-tag-list-item">
