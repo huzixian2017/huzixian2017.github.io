@@ -218,6 +218,7 @@
 <h2 id="6-数组改变html中不能更新，需要特殊设置"><a href="#6-数组改变html中不能更新，需要特殊设置" class="headerlink" title="6. 数组改变html中不能更新，需要特殊设置"></a>6. 数组改变html中不能更新，需要特殊设置</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//解决方案一</span></span><br><span class="line"><span class="comment">//this.myarr是数组,0是下标，后面是新数据</span></span><br><span class="line">Vue.set(<span class="keyword">this</span>.myarr,<span class="number">0</span>,&#123;<span class="attr">name</span>:<span class="string">"set修改"</span>,<span class="attr">age</span>:<span class="number">1</span>&#125;);</span><br><span class="line"><span class="comment">//解决方案二</span></span><br><span class="line">在<span class="number">0</span>下标删除一个，再添加一个</span><br><span class="line"> <span class="keyword">this</span>.myarr.splice(<span class="number">0</span>,<span class="number">1</span>,&#123;<span class="attr">name</span>:<span class="string">"splice修改"</span>,<span class="attr">age</span>:<span class="number">1</span>&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="7-ref-获取节点-event传参"><a href="#7-ref-获取节点-event传参" class="headerlink" title="7. ref 获取节点 , event传参"></a>7. ref 获取节点 , event传参</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">html:</span><br><span class="line">&lt;!--ref拿节点--&gt;</span><br><span class="line">     &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"mydiv"</span> ref=<span class="string">"myel"</span>&gt;</span><br><span class="line">            我的div</span><br><span class="line">     &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">     &lt;div class="mydiv" ref="myel"&gt;</span></span><br><span class="line"><span class="regexp">            我的div</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">&lt;!--myfn加了括号myfn()，就没有默认的event--&gt;</span><br><span class="line">&lt;!--解决方法 $event  <span class="number">1</span>是传的参数--&gt;</span><br><span class="line">&lt;button @click=<span class="string">"myfn($event,1)"</span> &gt;点击我触发函数&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">js:</span></span><br><span class="line"><span class="regexp"> methods:&#123;</span></span><br><span class="line"><span class="regexp">            myfn:function(event,str)&#123;</span></span><br><span class="line"><span class="regexp">                console.log(event,str);</span></span><br><span class="line"><span class="regexp">                var el =  this.$refs['myel'];</span></span><br><span class="line"><span class="regexp">                console.log(el);</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br></pre></td></tr></table></figure>
 <h2 id="8-v-once-只会更新一次，首次页面也算更新-注意：节点里的所有变量都只会更新一次"><a href="#8-v-once-只会更新一次，首次页面也算更新-注意：节点里的所有变量都只会更新一次" class="headerlink" title="8. v-once : 只会更新一次，首次页面也算更新 注意：节点里的所有变量都只会更新一次"></a>8. v-once : 只会更新一次，首次页面也算更新 注意：节点里的所有变量都只会更新一次</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">  &lt;div v-once&gt;</span><br><span class="line">        &#123;&#123; str &#125;&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;button @click="changetext"&gt;点击我改变&lt;/</span>button&gt;</span><br><span class="line">js:</span><br><span class="line">methods:&#123;</span><br><span class="line">            changetext()&#123;</span><br><span class="line">                <span class="keyword">this</span>.str = <span class="string">"我是改变的文字"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="9-ajax请求，mounted"><a href="#9-ajax请求，mounted" class="headerlink" title="9. ajax请求，mounted"></a>9. ajax请求，mounted</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">html:</span><br><span class="line"> &lt;p v-<span class="keyword">for</span>=<span class="string">"(v,k) in productList"</span>&gt;&#123;&#123;v.productName&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">js:</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/生命周期 加载完了</span></span><br><span class="line"><span class="regexp">data:function()&#123;</span></span><br><span class="line"><span class="regexp">            return&#123;</span></span><br><span class="line"><span class="regexp">                message:"我是message测试数据",</span></span><br><span class="line"><span class="regexp">                productList:[]</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;,</span></span><br><span class="line"><span class="regexp">   mounted()&#123;</span></span><br><span class="line"><span class="regexp">       $.ajax(&#123;</span></span><br><span class="line"><span class="regexp">          type:"get",</span></span><br><span class="line"><span class="regexp">          url:"data/</span>cart.json<span class="string">",</span></span><br><span class="line"><span class="string">          success:(res)=&gt;&#123;</span></span><br><span class="line"><span class="string">               //拿不到this</span></span><br><span class="line"><span class="string">               //箭头语法this穿透</span></span><br><span class="line"><span class="string">               //数据优先，通过数据控制视图，没有数据控件，循环添加数据</span></span><br><span class="line"><span class="string">                 console.log(res.result.productList);</span></span><br><span class="line"><span class="string">                 this.productList = res.result.productList;</span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">     &#125;)</span></span><br><span class="line"><span class="string"> &#125;,</span></span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h5 id="v-text-和-v-html区别"><a href="#v-text-和-v-html区别" class="headerlink" title="v-text 和 v-html区别"></a>v-text 和 v-html区别</h5><p>v-html可以解析标签</p>
 <h5 id="v-show和v-if区别："><a href="#v-show和v-if区别：" class="headerlink" title="v-show和v-if区别："></a>v-show和v-if区别：</h5><p>V-show通过改变css来切换，开销更小，v-if是真正的渲染节点，性能消耗大；（操作频繁的用v-show,操作较少的用v-if）</p>
 <h5 id="keep-alive标签：会把相同的东西存入缓存"><a href="#keep-alive标签：会把相同的东西存入缓存" class="headerlink" title="keep-alive标签：会把相同的东西存入缓存"></a>keep-alive标签：会把相同的东西存入缓存</h5><h4 id="我的简书链接"><a href="#我的简书链接" class="headerlink" title="我的简书链接"></a><a href="http://www.jianshu.com/u/5b22d201dc5a" title="胡自鲜" target="_blank" rel="external">我的简书链接</a></h4><p><strong>更多资源就在我的gitHub</strong>：<a href="https://github.com/huzixian2017/huzixian2017.github.io" target="_blank" rel="external">https://github.com/huzixian2017/huzixian2017.github.io</a></p>
@@ -1325,7 +1326,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ES6 对象 函数</a>
+                <a href="javascript:void(0)" class="js-tag color3">php 数据库 封装方法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1333,11 +1334,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">php 数据库 封装方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vue 入门 基础语法</a>
+                <a href="javascript:void(0)" class="js-tag color5">ES6 对象 函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1349,15 +1346,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">获取数据 post get load</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">跨域 同源 json jsonp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">对象 属性 方法</a>
+                <a href="javascript:void(0)" class="js-tag color4">获取数据 post get load</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1366,6 +1359,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GET POST http 数据包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vue 入门 基础语法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">对象 属性 方法</a>
               </li>
              
               <li class="article-tag-list-item">
