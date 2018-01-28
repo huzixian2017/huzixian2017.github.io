@@ -6,22 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js面向对象 | 胡自鲜</title>
+  <title>MongoDB - 语句 | 胡自鲜</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 对象定义的三种方式：1 . var obj1 = {“name” : “张三”}  2 . var  obj2 = new Object({name:”张三”}); 3 . var obj3 = Object.create({name:”张三”})； 1234var obj1 = &amp;#123;	name:&quot;李四&quot;,	age:19,&amp;#125;; 2. 直接定义对象var obj1 = new">
-<meta name="keywords" content="对象 属性 方法">
+  <meta name="description" content="1. 什么是MongoDB ?1、MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。在高负载的情况下，添加更多的节点，可以保证服务器性能。2、MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。3、MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档">
+<meta name="keywords" content="数据库 MongoDB 语句">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js面向对象">
-<meta property="og:url" content="http://yoursite.com/2017/12/25/js面向对象/index.html">
+<meta property="og:title" content="MongoDB - 语句">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/MongoDB-语句/index.html">
 <meta property="og:site_name" content="胡自鲜">
-<meta property="og:description" content="1. 对象定义的三种方式：1 . var obj1 = {“name” : “张三”}  2 . var  obj2 = new Object({name:”张三”}); 3 . var obj3 = Object.create({name:”张三”})； 1234var obj1 = &amp;#123;	name:&quot;李四&quot;,	age:19,&amp;#125;; 2. 直接定义对象var obj1 = new">
+<meta property="og:description" content="1. 什么是MongoDB ?1、MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。在高负载的情况下，添加更多的节点，可以保证服务器性能。2、MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。3、MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-f7c5cf86d78ad30f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-12-25T13:12:22.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-7bc368b947b3e342.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-359566ca41550508.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7426607-56065ff30987cacb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-01-28T04:30:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js面向对象">
-<meta name="twitter:description" content="1. 对象定义的三种方式：1 . var obj1 = {“name” : “张三”}  2 . var  obj2 = new Object({name:”张三”}); 3 . var obj3 = Object.create({name:”张三”})； 1234var obj1 = &amp;#123;	name:&quot;李四&quot;,	age:19,&amp;#125;; 2. 直接定义对象var obj1 = new">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7426607-f7c5cf86d78ad30f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="MongoDB - 语句">
+<meta name="twitter:description" content="1. 什么是MongoDB ?1、MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。在高负载的情况下，添加更多的节点，可以保证服务器性能。2、MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。3、MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7426607-7bc368b947b3e342.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="胡自鲜" type="application/atom+xml">
   
@@ -165,50 +167,131 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js面向对象" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MongoDB-语句" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js面向对象
+      MongoDB - 语句
     </h1>
   
 
         
-        <a href="/2017/12/25/js面向对象/" class="archive-article-date">
-  	<time datetime="2017-12-25T12:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
+        <a href="/2018/01/28/MongoDB-语句/" class="archive-article-date">
+  	<time datetime="2018-01-28T04:05:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-对象定义的三种方式："><a href="#1-对象定义的三种方式：" class="headerlink" title="1. 对象定义的三种方式："></a>1. 对象定义的三种方式：</h4><p>1 . var obj1 = {“name” : “张三”} </p>
-<p>2 . var  obj2 = new Object({name:”张三”});</p>
-<p>3 . var obj3 = Object.create({name:”张三”})；</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">	name:<span class="string">"李四"</span>,</span><br><span class="line">	age:<span class="number">19</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="2-直接定义对象"><a href="#2-直接定义对象" class="headerlink" title="2. 直接定义对象"></a>2. 直接定义对象</h4><p>var obj1 = new Object({“name”:”张三”});</p>
-<h4 id="3-追加定义对象"><a href="#3-追加定义对象" class="headerlink" title="3. 追加定义对象"></a>3. 追加定义对象</h4><p>var obj3 = new Object();<br>obj3.name = “张三”;<br>obj3.age = “20”;</p>
-<h4 id="4-覆盖定义对象；"><a href="#4-覆盖定义对象；" class="headerlink" title="4. 覆盖定义对象；"></a>4. 覆盖定义对象；</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">obj3 = &#123;</span><br><span class="line">	  <span class="string">"height"</span>:<span class="string">"178cm"</span>,</span><br><span class="line">	   hobby:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	      <span class="built_in">console</span>.log(<span class="string">"爱好"</span>);</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5-js对象的键名不需要双引号-json的键名需要双引号-规范外单内双"><a href="#5-js对象的键名不需要双引号-json的键名需要双引号-规范外单内双" class="headerlink" title="5. js对象的键名不需要双引号,json的键名需要双引号 规范外单内双"></a>5. js对象的键名不需要双引号,json的键名需要双引号 规范外单内双</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json = <span class="string">'&#123;"name":"张三","age":"19"&#125;'</span>;</span><br></pre></td></tr></table></figure>
-<h5 id="6-对象转换成json"><a href="#6-对象转换成json" class="headerlink" title="6. 对象转换成json"></a>6. 对象转换成json</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json1 = <span class="built_in">JSON</span>.stringify(obj3);</span><br></pre></td></tr></table></figure>
-<h5 id="7-json数据转换成对象"><a href="#7-json数据转换成对象" class="headerlink" title="7. json数据转换成对象"></a>7. json数据转换成对象</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json2 = <span class="built_in">JSON</span>.parse(json1);</span><br></pre></td></tr></table></figure>
-<h4 id="8-传值与传值"><a href="#8-传值与传值" class="headerlink" title="8. 传值与传值"></a>8. 传值与传值</h4><ul>
-<li><h5 id="传值："><a href="#传值：" class="headerlink" title="传值："></a>传值：</h5></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">b = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//10</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><h5 id="传址：对象赋值取相同的内存地址；"><a href="#传址：对象赋值取相同的内存地址；" class="headerlink" title="传址：对象赋值取相同的内存地址；"></a>传址：对象赋值取相同的内存地址；</h5></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	a:<span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj;</span><br><span class="line">obj2.a = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.a);<span class="comment">//5</span></span><br></pre></td></tr></table></figure>
-<h4 id="9-深度拷贝；arr-和-arr2之间不会有联系"><a href="#9-深度拷贝；arr-和-arr2之间不会有联系" class="headerlink" title="9. 深度拷贝；arr 和 arr2之间不会有联系"></a>9. 深度拷贝；arr 和 arr2之间不会有联系</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = arr;</span><br><span class="line"><span class="keyword">var</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(arr));</span><br><span class="line">arr2[<span class="number">2</span>] = <span class="number">7</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line"><span class="built_in">console</span>.log(arr2);</span><br></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/7426607-f7c5cf86d78ad30f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h4 id="10-对象属性和方法的调用"><a href="#10-对象属性和方法的调用" class="headerlink" title="10. 对象属性和方法的调用"></a>10. 对象属性和方法的调用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dog = &#123;</span><br><span class="line">	name:<span class="string">"wuli"</span>,</span><br><span class="line">	gender:<span class="string">"female"</span>,</span><br><span class="line">	eat:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"吃"</span>);</span><br><span class="line">	&#125;,</span><br><span class="line">	play:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"撒欢"</span>);</span><br><span class="line">	&#125;,</span><br><span class="line">	call:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"叫"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(dog);</span><br><span class="line"><span class="comment">//	调用属性</span></span><br><span class="line"><span class="built_in">console</span>.log(dog.name);</span><br><span class="line"><span class="comment">//	调用方法</span></span><br><span class="line">	dog.eat();</span><br><span class="line">	dog.play();</span><br><span class="line">	dog.call();</span><br></pre></td></tr></table></figure>
-<h4 id="11-什么是原型链？"><a href="#11-什么是原型链？" class="headerlink" title="11. 什么是原型链？"></a>11. 什么是原型链？</h4><p>答：当访问一个对象的属性或方法时，会先在对象自身上查找属性或方法是否存在，如果存在就使用对象自身的属性或方法。如果不存在就去创建对象的构造函数的原型对象中查找 ，依此类推，直到找到为止。如果到顶层对象中还找不到，则返回 undefined。</p>
-<h4 id="12-js内置对象"><a href="#12-js内置对象" class="headerlink" title="12. js内置对象"></a>12. js内置对象</h4><p>答：Object,Array,String,Number,Boolean,Date,Function<br>可以方便的使用一些方法和常量,譬如String里面就有很多字符串函数， Date可以处理时间</p>
-
+        <h2 id="1-什么是MongoDB"><a href="#1-什么是MongoDB" class="headerlink" title="1. 什么是MongoDB ?"></a>1. 什么是MongoDB ?</h2><p>1、MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。在高负载的情况下，添加更多的节点，可以保证服务器性能。<br>2、MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。<br>3、MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</p>
+<h2 id="下载，安装"><a href="#下载，安装" class="headerlink" title="下载，安装"></a>下载，安装</h2><p>homebrew 官方地址 <a href="https://brew.sh/" target="_blank" rel="external">https://brew.sh/</a></p>
+<p>在终端输入以下语句<br>1.先安装 homebrew</p>
+<blockquote>
+<p>/usr/bin/ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="external">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)”</p>
+</blockquote>
+<p>2.接着安装 mongodb</p>
+<blockquote>
+<p>brew install mongodb</p>
+</blockquote>
+<p>3.终端启动MongoDB数据库</p>
+<blockquote>
+<p>mongod —dbpath=数据库地址<br>例如： mongod –dbpath=/Users/lanou/Desktop/nodejs/vue/user/database </p>
+</blockquote>
+<p>4.再在终端中键入mongo（显示版本信息什么就说明安装好了）<br><img src="http://upload-images.jianshu.io/upload_images/7426607-7bc368b947b3e342.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>5.show dbs (查看所有数据库)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7426607-359566ca41550508.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>5.退出：exit退出，或者Ctrl+c</p>
+<h2 id="1-数据库操作"><a href="#1-数据库操作" class="headerlink" title="1.数据库操作"></a>1.数据库操作</h2><p>(1) . 创建(切换)数据库</p>
+<blockquote>
+<p>use database_name    ：（database_name代表数据库的名字）<br>注：如果数据库不存在，则创建数据库，否则切换到指定数据库</p>
+</blockquote>
+<p>(2) . 查看当前操作的数据库 </p>
+<blockquote>
+<p>db 或 db.getName()<br>注：db代表的是当前数据库 也就是person这个数据库</p>
+</blockquote>
+<p>(3) . 查看所有数据库</p>
+<blockquote>
+<p> show dbs </p>
+</blockquote>
+<p>(4) . 删除数据库</p>
+<blockquote>
+<p>db.dropDatabase()</p>
+</blockquote>
+<h2 id="2-集合操作"><a href="#2-集合操作" class="headerlink" title="2.集合操作"></a>2.集合操作</h2><p>（1）查看当前数据库里的所有的集合</p>
+<blockquote>
+<p>show collections</p>
+</blockquote>
+<p>（2）创建集合（collection）</p>
+<blockquote>
+<p>使用 db.createCollection(collection_Name)方法</p>
+</blockquote>
+<p>（3）删除当前数据库中的集合（collection）</p>
+<blockquote>
+<p>db.collection_Name.drop() </p>
+</blockquote>
+<h2 id="3-数据内容操作-（现在创建了一个users数据库，有一个person集合）"><a href="#3-数据内容操作-（现在创建了一个users数据库，有一个person集合）" class="headerlink" title="3.数据内容操作 （现在创建了一个users数据库，有一个person集合）"></a>3.数据内容操作 （现在创建了一个users数据库，有一个person集合）</h2><p>（1） 使用insert()方法插入文档</p>
+<blockquote>
+<p>插入一条数据<br>db.person.insert({name:’zpx’,age:6}) 向person集合添加一个{name:’zpx’,age:6}的数据<br>插入多条数据<br>db.person.insert([{name:’wangWu’,age:50},{name:’xiaoMing’,age:60}]) 向person集合添加多个[{name:’wangWu’,age:50},{name:’xiaoMing’,age:60}] 的Document</p>
+</blockquote>
+<p>（2） 使用save()方法插入文档</p>
+<blockquote>
+<p>db.collection_name.save(document)   collection_name集合的名字    document插入的文档<br>注：如果不指定 _id 字段 save() 方法类似于 insert() 方法。如果指定 _id 字段，则会更新该 _id 的数据。<br>实例<br>db.person.save({name:”xiaoHong”,age:50})<br>db.person.save({_id:ObjectId(“562c9caf671c978b6596e825”),name:”xiaoHong”,age:10})</p>
+</blockquote>
+<p>（3）修改数据：通过id来修改 save方法<br><img src="http://upload-images.jianshu.io/upload_images/7426607-56065ff30987cacb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>（4）更新</p>
+<blockquote>
+<p>db.person.update({name:’liSi_update’}, {$set: {age:40}}) 将document数据中name是liSi_update 的数据的age修改为 40<br>注：如果有多条name是liSi的数据默认只更新一条<br>加上{multi:true}就是更新所有name是liSi的数据<br>db.person.update({name:’liSi_update’}, {$set: {age:40}},{multi:true})</p>
+</blockquote>
+<p>（5）删除数据</p>
+<blockquote>
+<p>db.person.remove({name:’fJianZhou’}) 默认删除worker集合里name是fJianZhou的所有<br>如果只想删除一条加上{justOne:true}<br>db.person.remove({name:’fJianZhou’},{justOne:true}) </p>
+</blockquote>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>（1）数据查询</p>
+<blockquote>
+<p>db.person.find()      </p>
+</blockquote>
+<p>（2）pretty()方法以格式化的方式来显示所有文档</p>
+<blockquote>
+<p>db.person.find().pretty()</p>
+</blockquote>
+<p>（3）findOne()方法查询匹配结果的第一条数据</p>
+<blockquote>
+<p>db.person.findOne()</p>
+</blockquote>
+<p>（4）count统计查询到的数据条数</p>
+<blockquote>
+<p>db.person.find().count()</p>
+</blockquote>
+<p>（5）limit(num) :限制查询num条数据</p>
+<blockquote>
+<p> db.person.find({$or:[{name:/^李/},{name:/^王/}]}).sort({age:-1}).limit(2)</p>
+</blockquote>
+<p>（6）skip(num),跳过几条</p>
+<blockquote>
+<p>db.person.find().skip(2).limit(2)；跳过两条，limit查询两条</p>
+</blockquote>
+<p>（7）排序查询（排序查询 1.正序。-1：倒序）数字不要加引号，排序会有问题</p>
+<blockquote>
+<p>db.person.find().sort(age:1); 按照年龄排序</p>
+</blockquote>
+<h2 id="查询条件操作符"><a href="#查询条件操作符" class="headerlink" title="查询条件操作符"></a>查询条件操作符</h2><p>（1）比较条件</p>
+<blockquote>
+<p>条件：大于gt 小于lt 大于等于 gte 小于等于 lt 不等于 ne 等于 直接用冒号<br>db.person.find({age:{$gt:30}}) 查询age 大于 30的数据</p>
+</blockquote>
+<p>（2）逻辑条件 and or</p>
+<blockquote>
+<p>并且关系<br>查询数据名字是“王五”，并且年龄是33,并且关系直接写在对象里面<br>db.person.find({name:”王五”，age:33})</p>
+<p>或者关系<br>查询年龄等于48或者28<br>db.person.find({$or:[{age:48},{age:28}]})</p>
+</blockquote>
+<p>（3）正则表达</p>
+<blockquote>
+<p>查询所有以“王作为开头的”的数据<br>db.person.find({name:/^王/})</p>
+</blockquote>
+<h4 id="我的简书链接"><a href="#我的简书链接" class="headerlink" title="我的简书链接"></a><a href="http://www.jianshu.com/u/5b22d201dc5a" title="胡自鲜" target="_blank" rel="external">我的简书链接</a></h4>
       
 
       
@@ -242,7 +325,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">对象 属性 方法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据库 MongoDB 语句</a>
         		</li>
       		
 		</ul>
@@ -298,7 +381,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/25/js面向对象/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/28/MongoDB-语句/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -312,18 +395,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/25/构造函数 And 类/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          构造函数 And 类
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/24/PHP操作数据库的封装方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PHP操作数据库的封装方法</div>
+    <a href="/2018/01/27/Vue—入门基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue—入门基础</div>
       <i class="icon-circle-right"></i>
     </a>
   
